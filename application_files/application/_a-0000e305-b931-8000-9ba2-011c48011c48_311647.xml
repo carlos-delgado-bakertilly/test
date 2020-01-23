@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_627721</versionUuid>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>559373bc-73ff-4b06-aa34-fba824299d0e</versionUuid>
     <application>
         <name>GV POC Tramo Especial</name>
         <uuid>_a-0000e305-b931-8000-9ba2-011c48011c48_311647</uuid>
@@ -161,6 +162,7 @@
                         <uuid>_a-0000e337-c405-8000-9ba2-011c48011c48_382999</uuid>
                         <uuid>_a-0000e337-c405-8000-9ba2-011c48011c48_383004</uuid>
                         <uuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619902</uuid>
+                        <uuid>_a-0000e3b5-2b49-8000-9ba4-011c48011c48_683095</uuid>
                     </uuids>
                 </item>
                 <item>
@@ -433,5 +435,6 @@
     </roleMap>
     <history>
         <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_627721"/>
+        <historyInfo versionUuid="559373bc-73ff-4b06-aa34-fba824299d0e"/>
     </history>
-</applicationHaul>
+</applicationHaul><!--updated on 2020-01-23T12:19:40.161-->

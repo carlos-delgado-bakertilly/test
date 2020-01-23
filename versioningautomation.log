@@ -655,3 +655,232 @@ org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a worki
 2020-01-23 11:21:13,778 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql added successfully
 2020-01-23 11:21:13,778 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Generating metadata
 2020-01-23 11:21:13,790 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Checking for Flyway directories
+2020-01-23 11:21:17,098 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Committed all changes to repository at C:\Users\BTRD DIGITAL\Desktop\test\.git. Commit hash: ad905d852ed2f2f86e387ec89ef6d458026e02ff
+2020-01-23 11:21:21,373 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Changes pushed successfully.
+2020-01-23 12:16:48,934 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:value not provided],
+[flywayPath:value not provided],
+[ddlDs:value not provided],
+[uuid:_a-0000e305-b931-8000-9ba2-011c48011c48_311647],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 12:16:51,137 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Local repo updated successfully
+2020-01-23 12:16:51,265 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Unzipping application to repository
+2020-01-23 12:16:51,322 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Pieza_CDT.xsd
+2020-01-23 12:16:51,324 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Cliente_CDT.xsd
+2020-01-23 12:16:51,330 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Sucursal_CDT.xsd
+2020-01-23 12:16:51,333 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Orden_CDT.xsd
+2020-01-23 12:16:51,339 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_OrdDetalles_CDT.xsd
+2020-01-23 12:16:51,345 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Producto_CDT.xsd
+2020-01-23 12:16:51,348 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Vehiculos.xsd
+2020-01-23 12:16:51,350 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Picking_CDT.xsd
+2020-01-23 12:16:51,353 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Picking_Detail_CDT.xsd
+2020-01-23 12:16:51,355 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Suplidor_CDT.xsd
+2020-01-23 12:16:51,357 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Pedidos.xsd
+2020-01-23 12:16:51,358 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\group/_e-0000e39b-e6a8-8000-9aee-01075c01075c_1218.xml
+2020-01-23 12:16:51,366 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\group/_e-0000e39b-e6a8-8000-9aee-01075c01075c_1233.xml
+2020-01-23 12:16:51,368 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\dataStore/_a-0000e319-718a-8000-9ba2-011c48011c48_332471.xml
+2020-01-23 12:16:51,373 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331426.xml
+2020-01-23 12:16:51,376 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331440.xml
+2020-01-23 12:16:51,378 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331446.xml
+2020-01-23 12:16:51,386 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332328.xml
+2020-01-23 12:16:51,392 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332407.xml
+2020-01-23 12:16:51,399 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332414.xml
+2020-01-23 12:16:51,403 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332887/file.png
+2020-01-23 12:16:51,404 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332887.xml
+2020-01-23 12:16:51,407 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332894.xml
+2020-01-23 12:16:51,414 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332388.xml
+2020-01-23 12:16:51,421 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337267/file.jpg
+2020-01-23 12:16:51,428 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337267.xml
+2020-01-23 12:16:51,430 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332432.xml
+2020-01-23 12:16:51,437 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332453/file.jpg
+2020-01-23 12:16:51,442 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332453.xml
+2020-01-23 12:16:51,450 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332875.xml
+2020-01-23 12:16:51,456 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333074.xml
+2020-01-23 12:16:51,462 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333213.xml
+2020-01-23 12:16:51,465 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333725.xml
+2020-01-23 12:16:51,471 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333757.xml
+2020-01-23 12:16:51,474 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333916.xml
+2020-01-23 12:16:51,480 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/baa76074-c039-41bb-8f2c-d7a958a8ec18.xml
+2020-01-23 12:16:51,484 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_335349.xml
+2020-01-23 12:16:51,486 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_335527.xml
+2020-01-23 12:16:51,492 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336033.xml
+2020-01-23 12:16:51,500 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336045.xml
+2020-01-23 12:16:51,502 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336110.xml
+2020-01-23 12:16:51,504 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336116.xml
+2020-01-23 12:16:51,511 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336251.xml
+2020-01-23 12:16:51,513 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336324.xml
+2020-01-23 12:16:51,520 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336330.xml
+2020-01-23 12:16:51,526 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337255/file.jpg
+2020-01-23 12:16:51,533 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337255.xml
+2020-01-23 12:16:51,540 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339223/file.html
+2020-01-23 12:16:51,546 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339223.xml
+2020-01-23 12:16:51,557 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339872/file.html
+2020-01-23 12:16:51,560 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339872.xml
+2020-01-23 12:16:51,569 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339922.xml
+2020-01-23 12:16:51,576 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_352411.xml
+2020-01-23 12:16:51,579 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339916.xml
+2020-01-23 12:16:51,582 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340021.xml
+2020-01-23 12:16:51,591 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340077.xml
+2020-01-23 12:16:51,601 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340515.xml
+2020-01-23 12:16:51,609 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340521.xml
+2020-01-23 12:16:51,618 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340527.xml
+2020-01-23 12:16:51,621 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341633.xml
+2020-01-23 12:16:51,629 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341651.xml
+2020-01-23 12:16:51,638 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341754.xml
+2020-01-23 12:16:51,640 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_342175.xml
+2020-01-23 12:16:51,648 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_347797.xml
+2020-01-23 12:16:51,654 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_348020.xml
+2020-01-23 12:16:51,657 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_350885.xml
+2020-01-23 12:16:51,659 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351565.xml
+2020-01-23 12:16:51,667 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351589.xml
+2020-01-23 12:16:51,669 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351583.xml
+2020-01-23 12:16:51,676 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351601.xml
+2020-01-23 12:16:51,683 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_352946.xml
+2020-01-23 12:16:51,685 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_353183.xml
+2020-01-23 12:16:51,691 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_353826.xml
+2020-01-23 12:16:51,699 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354074.xml
+2020-01-23 12:16:51,701 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354048.xml
+2020-01-23 12:16:51,703 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_357580.xml
+2020-01-23 12:16:51,712 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354260.xml
+2020-01-23 12:16:51,716 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354323.xml
+2020-01-23 12:16:51,718 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354529.xml
+2020-01-23 12:16:51,721 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358103.xml
+2020-01-23 12:16:51,723 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365188.xml
+2020-01-23 12:16:51,732 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358271.xml
+2020-01-23 12:16:51,741 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358976.xml
+2020-01-23 12:16:51,743 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModelFolder/_g-0000e305-b931-8000-f92f-7f0000014e7a_467.xml
+2020-01-23 12:16:51,753 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32e-2154-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:51,756 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361493.xml
+2020-01-23 12:16:51,758 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361035.xml
+2020-01-23 12:16:51,760 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361258.xml
+2020-01-23 12:16:51,762 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361277.xml
+2020-01-23 12:16:51,765 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_364542.xml
+2020-01-23 12:16:51,772 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_364839.xml
+2020-01-23 12:16:51,779 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365465.xml
+2020-01-23 12:16:51,783 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365807.xml
+2020-01-23 12:16:51,789 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_366515.xml
+2020-01-23 12:16:51,797 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369699.xml
+2020-01-23 12:16:51,806 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369705.xml
+2020-01-23 12:16:51,809 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_367351.xml
+2020-01-23 12:16:51,812 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_367919.xml
+2020-01-23 12:16:51,816 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_368441.xml
+2020-01-23 12:16:51,824 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_368895.xml
+2020-01-23 12:16:51,835 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369150/file.html
+2020-01-23 12:16:51,838 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369150.xml
+2020-01-23 12:16:51,846 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369733.xml
+2020-01-23 12:16:51,855 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370879.xml
+2020-01-23 12:16:51,866 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370885.xml
+2020-01-23 12:16:51,876 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370903/file.jpg
+2020-01-23 12:16:51,888 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370903.xml
+2020-01-23 12:16:51,892 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370922.xml
+2020-01-23 12:16:51,895 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371021.xml
+2020-01-23 12:16:51,898 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371027.xml
+2020-01-23 12:16:51,908 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371099/file.jpg
+2020-01-23 12:16:51,920 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371099.xml
+2020-01-23 12:16:51,924 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371367/file.png
+2020-01-23 12:16:51,926 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371367.xml
+2020-01-23 12:16:51,930 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371373.xml
+2020-01-23 12:16:51,934 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371332.xml
+2020-01-23 12:16:51,936 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371355.xml
+2020-01-23 12:16:51,940 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371573.xml
+2020-01-23 12:16:51,944 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371567.xml
+2020-01-23 12:16:51,956 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32b-b095-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:51,974 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e324-eafa-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:51,986 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32d-e3d6-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:51,989 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/1f9d6a5c-b536-474e-bfc7-a607b59b2151.xml
+2020-01-23 12:16:51,992 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371698.xml
+2020-01-23 12:16:52,004 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0016e3a4-cd77-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,013 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371718.xml
+2020-01-23 12:16:52,017 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_372068.xml
+2020-01-23 12:16:52,020 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373406/file.png
+2020-01-23 12:16:52,028 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373406.xml
+2020-01-23 12:16:52,036 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373413.xml
+2020-01-23 12:16:52,045 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_382999.xml
+2020-01-23 12:16:52,048 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_383004.xml
+2020-01-23 12:16:52,050 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_382986.xml
+2020-01-23 12:16:52,053 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619902.xml
+2020-01-23 12:16:52,061 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e317-ea7d-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,077 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/006de322-2d67-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,093 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/006de322-4382-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,108 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0040e322-46ae-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,118 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e322-66ff-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,128 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-5608-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,138 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-76d9-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,149 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-7ae9-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,160 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e324-b1ab-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,172 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e325-4b27-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,192 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/003ae325-f9a8-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,202 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e333-4b9d-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,212 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e334-7ef3-8000-f92f-7f0000014e7a.xml
+2020-01-23 12:16:52,216 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/bcf0b8a1-ecb2-410f-9137-d4f9928d7f23.xml
+2020-01-23 12:16:52,218 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/6a6b8d53-182c-415b-9410-9d252b74c2fc.xml
+2020-01-23 12:16:52,220 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/e21ca4dc-d722-45e6-a8f8-8d7aa53bf016.xml
+2020-01-23 12:16:52,223 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/28152498-f6b6-433a-859d-eaf7e129ade2.xml
+2020-01-23 12:16:52,226 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\site/89a40af9-2775-42de-a0d5-188db437e888.xml
+2020-01-23 12:16:52,236 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\site/9c1d7157-0e7c-4c2d-aca7-9e107eab70fb.xml
+2020-01-23 12:16:52,502 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted and updated XML/XSD file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\application/_a-0000e305-b931-8000-9ba2-011c48011c48_311647.xml
+2020-01-23 12:16:52,539 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\MANIFEST.MF
+2020-01-23 12:16:52,558 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\export.log
+2020-01-23 12:16:52,594 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 12:16:52,595 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+java.lang.IllegalStateException: Error: the zip file cannot be committed to the repository. The zip file contains one or more application xml files and the versioning tool has been invoked with the parameter -UUID signaling that it should be a patch.
+	at com.appiancorp.ps.automatedversioning.helper.RepoHelper.checkAppPatchZipIntegrity(RepoHelper.java:182)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:89)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 12:19:38,350 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\patch-one.zip],
+[adminConsolePath:value not provided],
+[ddlPath:value not provided],
+[flywayPath:value not provided],
+[ddlDs:value not provided],
+[uuid:_a-0000e305-b931-8000-9ba2-011c48011c48_311647],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 12:19:39,937 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Local repo updated successfully
+2020-01-23 12:19:40,071 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Unzipping application to repository
+2020-01-23 12:19:40,119 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e3b5-2b49-8000-9ba4-011c48011c48_683095.xml
+2020-01-23 12:19:40,128 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\MANIFEST.MF
+2020-01-23 12:19:40,129 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\export.log
+2020-01-23 12:19:40,130 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Patch detected - Updating Application XML
+2020-01-23 12:19:40,211 [main] INFO  com.appiancorp.ps.automatedversioning.helper.UpdateAppXmlHelper - Successfully updated _a-0000e305-b931-8000-9ba2-011c48011c48_311647.xml.
+2020-01-23 12:19:40,211 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Checking for DDLs
+2020-01-23 12:19:40,222 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Checking for Flyway directories
