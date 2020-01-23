@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>5ca9e533-8093-416f-9b6a-4a296a139275</versionUuid>
+    <tempoReport a:uuid="6a6b8d53-182c-415b-9410-9d252b74c2fc" name="GV_Task">
+        <a:description></a:description>
+        <a:uiExpr>=#"_a-0000e319-718a-8000-9ba2-011c48011c48_348020"()</a:uiExpr>
+        <a:urlStub>it_Wkg</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e39b-e6a8-8000-9aee-01075c01075c_1233</groupUuid>
+                <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="5ca9e533-8093-416f-9b6a-4a296a139275"/>
+    </history>
+</tempoReportHaul>

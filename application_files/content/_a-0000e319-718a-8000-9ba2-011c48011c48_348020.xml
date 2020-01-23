@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e337-c405-8000-9ba2-011c48011c48_382998</versionUuid>
+    <rule>
+        <name>GV_TaskReport</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_348020</uuid>
+        <description>Interface for showing pending proposals tasks</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!tasks: #"_a-0000e337-c405-8000-9ba2-011c48011c48_382986"(loggedInUser()),
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(startIndex: 1, batchSize: -1),
+  #"SYSTEM_SYSRULES_gridField"(
+    label: "Mis Tareas",
+    totalCount: local!tasks.totalCount,
+    columns: {
+      #"SYSTEM_SYSRULES_gridTextColumn"(
+        label: "Nombre:",
+        field: "c0",
+        data: index(local!tasks.data,"c0", null),
+        links: #"SYSTEM_SYSRULES_forEach"(
+          items: local!tasks.data,
+          expression: #"SYSTEM_SYSRULES_processTaskLink"(
+            task: index(fv!item, "dp0", null)
+          )
+        )
+      ),
+      #"SYSTEM_SYSRULES_gridTextColumn"(
+        label: "Fecha de Asignacion:",
+        field: "c2",
+        data: #"SYSTEM_SYSRULES_forEach"(
+          items: local!tasks.data,
+          expression: text(index(fv!item, "c2", null), "mmm dd, yyyy")
+        ))
+    },
+    value: local!pagingInfo
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e337-c405-8000-9ba2-011c48011c48_382998"/>
+    </history>
+</contentHaul>

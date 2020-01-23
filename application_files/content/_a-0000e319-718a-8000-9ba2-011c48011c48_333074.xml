@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_348128</versionUuid>
+    <rule>
+        <name>AddPieza</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_333074</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Form",
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      contents: {
+        #"SYSTEM_SYSRULES_integerField"(
+          label: "ID Suplidor",
+          labelPosition: "ABOVE",
+          value: ri!GV_Pieza.idSuplidor,
+          saveInto: ri!GV_Pieza.idSuplidor,
+          refreshAfter: "UNFOCUS",
+          validations: {}
+        ),
+      }
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Estado",
+      labelPosition: "ABOVE",
+      value: ri!GV_Pieza.estado,
+      saveInto: ri!GV_Pieza.estado,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_barcodeField"(
+      label: "Barcode",
+      labelPosition: "ABOVE",
+      value: ri!GV_Pieza.codigoBarraNum,
+      saveInto: ri!GV_Pieza.codigoBarraNum,
+      refreshAfter: "KEYPRESS"
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Section",
+      contents: {}
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY",
+        saveInto: {
+          a!save(ri!GV_Pieza.idProducto, 1),
+          a!save(ri!GV_Pieza.idSuplidor, 1),
+          a!save(ri!GV_Pieza.estado, "Disponible"),
+          a!save(ri!GV_Pieza.tipo, "Almacen"),
+          a!save(ri!GV_Pieza.estaReservada, false())
+        }
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Cancel",
+        value: true,
+        saveInto: ri!cancel,
+        submit: true,
+        style: "NORMAL",
+        validate: false
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>GV_Pieza</name>
+            <type>
+                <name>GV_Pieza_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_348128"/>
+    </history>
+</contentHaul>

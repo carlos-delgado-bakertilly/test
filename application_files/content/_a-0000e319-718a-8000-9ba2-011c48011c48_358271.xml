@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_365263</versionUuid>
+    <rule>
+        <name>GV_ObtenerOrdenID_DetalleOrden</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_358271</uuid>
+        <description>Obtiene todas las cedulas registradas cédula</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_queryEntity_v1"(
+  entity: #"_a-0000e319-718a-8000-9ba2-011c48011c48_365188",
+  query: #"SYSTEM_SYSRULES_query"(
+    aggregation: #"SYSTEM_SYSRULES_queryAggregation"(
+      aggregationColumns: {
+        #"SYSTEM_SYSRULES_queryAggregationColumn"(
+          field: "idOrden",
+          isGrouping: true
+        )
+      }
+    ),
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+      startIndex: 1,
+      batchSize: 50
+    )
+  ),
+  fetchTotalCount: false
+).data.idOrden</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_365263"/>
+    </history>
+</contentHaul>

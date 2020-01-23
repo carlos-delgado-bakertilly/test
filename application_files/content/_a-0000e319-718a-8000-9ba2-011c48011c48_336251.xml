@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621119</versionUuid>
+    <rule>
+        <name>GV_VerificarCliente</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_336251</uuid>
+        <description>Pantalla para verificar o crear un cliente</description>
+        <parentUuid>_a-0000e305-b931-8000-9ba2-011c48011c48_304485</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!pickedIndex: {},
+  local!filtroMarca: null,
+  local!filtroCustom: null,
+  local!Existente: false,
+  local!showDetail: false,
+  local!cedula,
+  local!test: {},
+  local!steps: {"Verify Client","Order Details"},
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    contents: {
+      #"_a-0000e39b-e6a8-8000-9ba2-011c48011c48_594492"("car", "New", "Order"),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(divider: "ABOVE"),
+      #"SYSTEM_SYSRULES_milestoneField"(
+        label: "Stages",
+        labelPosition: "ABOVE",
+        steps: local!steps,
+        links: {},
+        active: 1
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_columnsLayout"(
+                    columns: {
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_ButtonArrayLayout"(
+                            buttons: {
+                              #"SYSTEM_SYSRULES_ButtonWidget"(
+                                label: "New Client",
+                                value: "Nuevo",
+                                saveinto: {
+                                  ri!tipoCliente,
+                                  a!save(local!Existente, false)
+                                },
+                                style: "NORMAL"
+                              )
+                            },
+                            align: "START"
+                          )
+                        }
+                      ),
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_ButtonArrayLayout"(
+                            buttons: {
+                              #"SYSTEM_SYSRULES_ButtonWidget"(
+                                label: "Existing Client",
+                                value: "Existente",
+                                saveinto: {
+                                  ri!tipoCliente,
+                                  a!save(local!Existente, true)
+                                  },
+                                style: "NORMAL"
+                              )
+                            },
+                            align: "START"
+                          )
+                        }
+                      )
+                    }
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Existing Client",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Client Search",
+                    labelPosition: "ABOVE",
+                    instructions: "Search client by ID number.",
+                    value: local!cedula,
+                    saveInto: local!cedula,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  ),
+                  #"SYSTEM_SYSRULES_ButtonArrayLayout"(
+                    buttons: {
+                      #"SYSTEM_SYSRULES_ButtonWidget"(
+                        label: "Search",
+                        saveInto: {
+                          a!save(ri!hasSearched, true),
+                          a!save(ri!Cliente, #"_a-0000e319-718a-8000-9ba2-011c48011c48_336330"(local!cedula)),
+                          a!save(local!showDetail, true)
+                        },
+                        style: "NORMAL"
+                      )
+                    },
+                    align: "START"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_boxLayout"(
+                    label: "Client Details",
+                    contents: if (
+                      and(ri!hasSearched = true(), isnull(ri!Cliente.id)),
+                      {#"SYSTEM_SYSRULES_textField"(label: "El cliente no fue encontrado o No existe.", readOnly: true)},
+                      {
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "Client Name",
+                          labelPosition: "ADJACENT",
+                          value: ri!Cliente.nombre,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "Email",
+                          labelPosition: "ADJACENT",
+                          value: ri!Cliente.email,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "Phone",
+                          labelPosition: "ADJACENT",
+                          value: ri!Cliente.telefono,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "ID Number",
+                          labelPosition: "ADJACENT",
+                          value: ri!Cliente.cedula,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "Address",
+                          labelPosition: "ADJACENT",
+                          value: ri!Cliente.direccion,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        )
+                      }
+                    ),
+                    style: "ACCENT",
+                    marginBelow: "STANDARD"
+                  )
+                },
+                showWhen: local!showDetail
+              )
+            }
+          ),
+          {
+            a!localVariables(
+              /* This variable is used to persist the checkbox on selected items by holding the identifiers of the selected rows. */
+              local!selection,
+              /* This variable would be used to pass the full rows of data on the selected items out of this interface, such as to a process model. */
+              local!selectedEmployees,
+              {}
+            )
+          }
+        },
+        showwhen: if(
+          ri!tipoCliente = "Existente",
+          true,
+          false
+        )
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Datos del cliente nuevo",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Nombre Completo",
+                    labelPosition: "ABOVE",
+                    value: ri!Cliente.nombre,
+                    saveInto: ri!Cliente.nombre,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  ),
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Cédula",
+                    labelPosition: "ABOVE",
+                    value: ri!Cliente.cedula,
+                    saveInto: ri!Cliente.cedula,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  ),
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Dirección",
+                    labelPosition: "ABOVE",
+                    value: ri!Cliente.direccion,
+                    saveInto: ri!Cliente.direccion,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Email",
+                    labelPosition: "ABOVE",
+                    value: ri!Cliente.email,
+                    saveInto: ri!Cliente.email,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  ),
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Teléfono",
+                    labelPosition: "ABOVE",
+                    value: ri!Cliente.telefono,
+                    saveInto: ri!Cliente.telefono,
+                    refreshAfter: "UNFOCUS",
+                    validations: {}
+                  )
+                }
+              )
+            }
+          )
+        },
+        showwhen: if(
+          ri!tipoCliente = "Nuevo",
+          true,
+          false
+        )
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Vehículos del cliente nuevo",
+        contents: {
+          #"_a-0000e319-718a-8000-9ba2-011c48011c48_336110"(null, ri!Vehiculos)
+        },
+        showwhen: if(
+          ri!tipoCliente = "Nuevo",
+          true,
+          false
+        )
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: if (local!Existente, "Next", "Create"),
+          submit: true,
+          style: "PRIMARY",
+          disabled:  if (isnull(ri!Cliente.cedula), true, false)
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Cancel",
+          value: true,
+          saveInto: ri!cancel,
+          submit: true,
+          style: "NORMAL",
+          validate: false
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>Cliente</name>
+            <type>
+                <name>GV_Cliente_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>hasSearched</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>Vehiculos</name>
+            <type>
+                <name>GV_Vehiculos?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>tipoCliente</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621119"/>
+    </history>
+</contentHaul>

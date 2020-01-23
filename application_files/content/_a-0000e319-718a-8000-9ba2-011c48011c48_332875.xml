@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_348012</versionUuid>
+    <rule>
+        <name>AddProduct</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_332875</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Form",
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      contents: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Nombre",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.nombre,
+      saveInto: ri!GV_Producto.nombre,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Descripcion",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.descripcion,
+      saveInto: ri!GV_Producto.descripcion,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Marca",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.marca,
+      saveInto: ri!GV_Producto.marca,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_floatingPointField"(
+      label: "Precio",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.precio,
+      saveInto: ri!GV_Producto.precio,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Estado",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.estado,
+      saveInto: ri!GV_Producto.estado,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_integerField"(
+      label: "Cantidad",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.cantidad,
+      saveInto: ri!GV_Producto.cantidad,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Categoria",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.categoria,
+      saveInto: ri!GV_Producto.categoria,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Modelo",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.modelo,
+      saveInto: ri!GV_Producto.modelo,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Estante",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.tramo,
+      saveInto: ri!GV_Producto.tramo,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Tramo",
+      labelPosition: "ABOVE",
+      value: ri!GV_Producto.estante,
+      saveInto: ri!GV_Producto.estante,
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Section",
+      contents: {}
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Cancel",
+        value: true,
+        saveInto: ri!cancel,
+        submit: true,
+        style: "NORMAL",
+        validate: false
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>GV_Producto</name>
+            <type>
+                <name>GV_Producto_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_348012"/>
+    </history>
+</contentHaul>

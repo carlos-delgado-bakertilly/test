@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_370585</versionUuid>
+    <rule>
+        <name>GV_PagePedidos</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_361035</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!decision,
+  /*local!products: a!forEach(ri!productos, rule!GV_GetProductoById(fv!item.id)),*/
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "",
+    contents: {
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        contents: {
+          #"SYSTEM_SYSRULES_billboardLayout_v1"(
+            backgroundMedia: #"SYSTEM_SYSRULES_webImage"(
+              source: "http://ditealgo.com/wp-content/uploads/2019/02/szzcxruaqnbclguz.jpg"
+            ),
+            backgroundColor: "#f0f0f0",
+            height: "SHORT",
+            marginbelow: "STANDARD",
+            overlay: #"SYSTEM_SYSRULES_barOverlay"(
+              contents: {
+
+                #"SYSTEM_SYSRULES_columnsLayout"(
+                  columns: {
+                    #"SYSTEM_SYSRULES_columnLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_sideBySideLayout"(
+                          items: {
+                            #"SYSTEM_SYSRULES_sideBySideItem"(
+                              item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: {
+                                      "GRUPO VIAMAR"
+                                    },
+                                    size: "LARGE"
+                                  ),
+                                  char(10),
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: {
+                                      "ENSANCHE KENNEDY"
+                                    },
+                                    size: "MEDIUM"
+                                  )
+                                }
+                              )
+                            )
+                          },
+                          alignVertical: "MIDDLE"
+                        )
+
+                      }
+                    )
+                  },
+                  alignVertical: "MIDDLE"
+                )
+              }
+            )
+          )
+        }
+
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "GESTION",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    contents: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                      value: {
+                        #"SYSTEM_SYSRULES_richTextIcon"(
+                          icon: "ship",
+                          color: "#696969",
+                          size: "LARGE"
+                        ),
+                        char(10),
+                        #"SYSTEM_SYSRULES_richTextItem_v1"(
+                          text: {
+                            "PEDIDOS MARITIMOS"
+                          },
+                          color: "#696969",
+                          size: "MEDIUM",
+                          style: {
+                            "STRONG"
+                          }
+                        ),
+                        char(10),
+                        "Pedido mas proximo: " &amp; #"_a-0000e319-718a-8000-9ba2-011c48011c48_361277"()[1].fechaEstimada
+                      },
+                      align: "CENTER"
+                    ),
+                    /* Setting this variable would be used to navigate to a category of answers */
+                    link: #"SYSTEM_SYSRULES_startProcessLink"(
+                      label: "Pedidos Maritimos",
+                      processModel:  #"_a-0000e319-718a-8000-9ba2-011c48011c48_361493"
+                    ),
+                    height: "AUTO",
+                    marginBelow: "STANDARD"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    contents: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                      value: {
+                        #"SYSTEM_SYSRULES_richTextIcon"(
+                          icon: "plane",
+                          color: "#696969",
+                          size: "LARGE"
+                        ),
+                        char(10),
+                        #"SYSTEM_SYSRULES_richTextItem_v1"(
+                          text: {
+                            "PEDIDOS AEREOS"
+                          },
+                          color: "#696969",
+                          size: "MEDIUM",
+                          style: {
+                            "STRONG"
+                          }
+                        ),
+                        char(10),
+                        "Pedido mas proximo: " &amp; #"_a-0000e319-718a-8000-9ba2-011c48011c48_361277"()[4].fechaEstimada
+                      },
+                      align: "CENTER"
+                    ),
+                    /* Setting this variable would be used to navigate to a category of answers */
+                    link: #"SYSTEM_SYSRULES_startProcessLink"(
+                      label: "Pedidos Aereos",
+                      processModel: #"_a-0000e305-b931-8000-9ba2-011c48011c48_287270"
+                    ),
+                    height: "AUTO",
+                    marginBelow: "STANDARD" 
+                  )
+                }
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {}
+          )
+        }
+      )
+      
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      
+    )
+  )
+)
+</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_370585"/>
+    </history>
+</contentHaul>

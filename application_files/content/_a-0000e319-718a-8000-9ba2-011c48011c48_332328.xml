@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621695</versionUuid>
+    <rule>
+        <name>GV_CreacionCaso</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_332328</uuid>
+        <description>Interfaz para la creación de un caso</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!pickedIndex: {},
+  local!filtroMarca: null,
+  local!filtroCustom: null,
+  local!steps: {"Verify Client","Order Details"},
+  local!numCaso: tostring(rand()*100000),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    contents: {
+      #"_a-0000e39b-e6a8-8000-9ba2-011c48011c48_594492"("car", "New", "Order"),
+      #"SYSTEM_SYSRULES_milestoneField"(
+        label: "Stages",
+        labelPosition: "ABOVE",
+        steps: local!steps,
+        links: {},
+        active: 2
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Part Selection",
+        contents: {
+          {
+            a!localVariables(
+              /* This variable is used to persist the checkbox on selected items by holding the identifiers of the selected rows. */
+              local!selection,
+              /* This variable would be used to pass the full rows of data on the selected items out of this interface, such as to a process model. */
+              local!selectedEmployees,
+              {
+                #"SYSTEM_SYSRULES_boxLayout"(
+                  label: "Parts Catalog",
+                  contents: {
+                    #"SYSTEM_SYSRULES_columnsLayout"(
+                      columns: {
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_dropdownField"(
+                              label: "Brand",
+                              labelPosition: "ABOVE",
+                              placeholderLabel: "Select a brand",
+                              choiceLabels: {
+                                "Kia",
+                                "Mazda",
+                                "Ford"
+                              },
+                              choiceValues: {
+                                "Kia",
+                                "Mazda",
+                                "Ford"
+                              },
+                              value: local!filtroMarca,
+                              saveInto: local!filtroMarca,
+                              validations: {}
+                            )
+                          }
+                        ),
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_dropdownField"(
+                              label: "Article Category",
+                              labelPosition: "ABOVE",
+                              placeholderLabel: "Select a category",
+                              choiceLabels: {
+                                "Absorber",
+                                "Lights",
+                                "Rear-view mirror"
+                              },
+                              choiceValues: {
+                                "Absorber",
+                                "Lights",
+                                "Rear-view mirror"
+                              },
+                              value: local!filtroCustom,
+                              saveInto: local!filtroCustom,
+                              validations: {}
+                            )
+                          }
+                        )
+                      }
+                    ),
+                    #"SYSTEM_SYSRULES_columnsLayout"(
+                      columns:{
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_gridField_v1"(
+                              label: "",
+                              labelPosition: "ABOVE",
+                              data: #"SYSTEM_SYSRULES_queryEntity_v1"(
+                                entity: #"_a-0000e319-718a-8000-9ba2-011c48011c48_333213",
+                                query: #"SYSTEM_SYSRULES_query"(
+                                  logicalexpression: #"SYSTEM_SYSRULES_queryLogicalExpression"(
+                                    operator: "AND",
+                                    filters: {
+                                      #"SYSTEM_SYSRULES_queryFilter"(
+                                        field: "marca",
+                                        operator: "=",
+                                        value: local!filtroMarca
+                                      ),
+                                      if(
+                                        isnull(local!filtroCustom),
+                                        null,
+                                        #"SYSTEM_SYSRULES_queryFilter"(
+                                          field: "categoria",
+                                          operator: "=",
+                                          value: local!filtroCustom
+                                        )
+                                      )
+                                        
+                                    },
+                                    ignoreFiltersWithEmptyValues: true
+                                  ),
+                                  pagingInfo: fv!pagingInfo
+                                ),
+                                fetchTotalCount: true
+                              ),
+                              columns: {
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Add part",
+                                  value: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                    label: "Select item",
+                                    value: if(
+                                      contains(tointeger(local!pickedIndex), fv!row.id),
+                                      null,
+                                      #"SYSTEM_SYSRULES_richTextIcon"(
+                                        icon: "level-up",
+                                        caption: "Add a part to the order.",
+                                        link: #"SYSTEM_SYSRULES_dynamicLink"(
+                                          value: 'type!{urn:com:appian:types}GV_OrdDetalles_CDT'(
+                                            idProducto: fv!row.id,
+                                            cantidad: fv!row.cantidad,
+                                            precioUnidad: fv!row.precio
+                                          ),
+                                          saveInto: {
+                                            a!save(ri!ordenDet, append(ri!ordenDet, save!value)),
+                                            a!save(local!pickedIndex, append(local!pickedIndex, save!value.idProducto))
+                                          }
+                                        )
+                                      )
+                                      
+                                      )
+                                      
+                                    )
+                                  )
+                                  
+                                /*)*/,
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Name",
+                                  sortField: "nombre",
+                                  value: fv!row.nombre
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Brand",
+                                  sortField: "marca",
+                                  value: fv!row.marca
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Price",
+                                  sortField: "precio",
+                                  value: if(
+                                    isnull(fv!row.precio),
+                                    fv!row.precio,
+                                    dollar(fixed(fv!row.precio, 2))
+                                  ),
+                                  align: "END"
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Status",
+                                  sortField: "estado",
+                                  value: if(fv!row.estado="Disponible", "Available", "Not Available")
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "In Stock",
+                                  sortField: "cantidad",
+                                  value: fv!row.cantidad,
+                                  align: "END"
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "In inventory",
+                                  value: 0,
+                                  align: "END"
+                                ),
+                                #"SYSTEM_SYSRULES_gridColumn"(
+                                  label: "Category",
+                                  sortField: "categoria",
+                                  value: fv!row.categoria
+                                )
+                              },
+                              validations: {}
+                            )
+                          }
+                        )
+                      }
+                    )
+                  },
+                  style: "ACCENT",
+                  marginBelow: "STANDARD"
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_boxLayout"(
+              label: "Selected Parts",
+              contents: {
+                #"SYSTEM_SYSRULES_gridLayout"(
+                  label: "",
+                  headerCells: {
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Name"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Price per unit"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Quantity"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Subtotal"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Taxes"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Total Price"),
+                    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Delete part")
+                  },
+                  columnConfigs: {
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+                    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "ICON")
+                  },
+                  rows: {
+                    #"SYSTEM_SYSRULES_forEach"(
+                      ri!ordenDet,
+                      #"SYSTEM_SYSRULES_gridRowLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_textField"(
+                            value:#"SYSTEM_SYSRULES_queryEntity_v1"(
+                                      entity: #"_a-0000e319-718a-8000-9ba2-011c48011c48_333213",
+                                      query: #"SYSTEM_SYSRULES_query"(
+                                        logicalExpression: #"SYSTEM_SYSRULES_queryLogicalExpression"(
+                                          operator: "AND",
+                                          filters: {
+                                            #"SYSTEM_SYSRULES_queryFilter"(
+                                              field: "id",
+                                              operator: "=",
+                                              value: fv!item.idProducto
+                                            )
+                                          },
+                                          ignoreFiltersWithEmptyValues: true
+                                        ),
+                                        pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+                                          startIndex: 1,
+                                          batchSize: 50
+                                        )
+                                      ),
+                                      fetchTotalCount: false
+                                    ).data.nombre,
+                            readOnly: true
+                          ),
+                          #"SYSTEM_SYSRULES_textField"(
+                            value: "$" &amp; fixed(fv!item.precioUnidad, 2),
+                            readOnly: true
+                          ),
+                          #"SYSTEM_SYSRULES_dropdownField"(
+                            label: "Quantity",
+                            choiceLabels: enumerate(10),
+                            choiceValues: enumerate(10),
+                            value: fv!item.cantidad,
+                            saveInto: {
+                              a!save(fv!item.cantidad, save!value),
+                              a!save(fv!item.subtotal, fv!item.cantidad * fv!item.precioUnidad),
+                              a!save(fv!item.precioTotal, (fv!item.cantidad * fv!item.precioUnidad)*1.18)
+                            },
+                            validations: if (
+                              fv!item.cantidad = 0,
+                              "Number of parts have to be more than 0.",
+                              null
+                            )
+                          ),
+                          #"SYSTEM_SYSRULES_textField"(
+                            value: if(
+                              isnull(fv!item.subtotal),
+                              null,
+                              "$" &amp; fixed(fv!item.subtotal, 2)
+                            ),
+                            readOnly: true
+                          ),
+                          #"SYSTEM_SYSRULES_textField"(
+                            value: if(
+                              isnull(fv!item.subtotal),
+                              null,
+                              "$" &amp; fixed(fv!item.subtotal * 0.18, 2)
+                            ),
+                            readOnly: true
+                          ),
+                          #"SYSTEM_SYSRULES_textField"(
+                            value: if(
+                              isnull(fv!item.precioTotal),
+                              null,
+                              "$" &amp; fixed(fv!item.precioTotal, 2)
+                            ),
+                            readOnly: true
+                          ),
+                          #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            label: "Delete",
+                            value: #"SYSTEM_SYSRULES_richTextIcon"(
+                              icon: "close",
+                              caption: "Delete this part.",
+                              link: #"SYSTEM_SYSRULES_dynamicLink"(
+                                value: fv!item.idPieza,
+                                saveInto: {
+                                      a!save(ri!ordenDet, remove(ri!ordenDet, fv!index)),
+                                      a!save(local!pickedIndex, remove(local!pickedIndex, fv!index))
+                                      
+                                }
+                              ),
+                              color: "NEGATIVE"
+                            )
+                          )
+                        }
+                      )
+                    )
+                  }
+                )
+              },
+              style: "ACCENT",
+              marginBelow: "STANDARD"
+            )
+          }
+        }
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Order Details",
+        contents: {
+          #"SYSTEM_SYSRULES_boxLayout"(
+            label: "Order Details",
+            contents: {
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Store",
+                        labelPosition: "ADJACENT",
+                        value: "Principal",
+                        refreshAfter: "UNFOCUS",
+                        readonly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_dateField"(
+                        label: "Created Date",
+                        labelPosition: "ADJACENT",
+                        value: today(),
+                        saveInto: {},
+                        readonly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Employee",
+                        labelPosition: "ADJACENT",
+                        value: user(loggedInUser(), "email"),
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        readonly: true,
+                        validations: {}
+                      )
+                      /*a!dateField(*/
+                        /*label: "Fecha estimada de entrega",*/
+                        /*labelPosition: "ADJACENT",*/
+                        /*value: ri!GV_Orden.fechaEstimada,*/
+                        /*saveInto: ri!GV_Orden.fechaEstimada,*/
+                        /*required: true,*/
+                        /*requiredMessage: "Este campo es obligatorio.",*/
+                        /*validations: {}*/
+                      /*)*/
+                    }
+                  ),
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        label: "",
+                        labelPosition: "ABOVE",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: {"Total: "},
+                            size: "LARGE"
+                          ),
+                          /*a!localVariables(*/
+                            /*local!sum: sum(*/
+                              /*a!forEach(*/
+                                /*ri!ordenDet,*/
+                                /*fv!item.precioTotal*/
+                              /*)*/
+                            /*)*/
+                          /*)*/
+                          /**/
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: "$" &amp; fixed(sum(
+  #"SYSTEM_SYSRULES_forEach"(
+    ri!ordenDet,
+    fv!item.precioTotal
+  )
+),2),
+                            size: "LARGE"
+                          )
+                        }
+                      )
+                    }
+                  )
+                }
+              )
+            },
+            style: "ACCENT",
+            marginBelow: "STANDARD"
+          )
+        }
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Create",
+          saveInto: {
+            #"SYSTEM_SYSRULES_forEach"(
+              ri!ordenDet,
+              {
+                a!save(fv!item.estado, "En proceso")
+              }
+            ),
+            /*GV_Orden*/
+            a!save(ri!GV_Orden.idCliente, ri!id_cliente),
+            a!save(ri!GV_Orden.idSucursal, 1),
+            a!save(ri!GV_Orden.estado, "In process"),
+            a!save(ri!GV_Orden.fechaCreacion, today()),
+            a!save(ri!GV_Orden.total, sum(
+              #"SYSTEM_SYSRULES_forEach"(
+                ri!ordenDet,
+                fv!item.precioTotal
+              )
+            )),
+            a!save(ri!GV_Orden.nombreVendedor, user(loggedInUser(), "firstName")),
+            a!save(ri!GV_Orden.fechaEstimada, today() +7)
+          },
+          submit: true,
+          style: "PRIMARY"
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Cancel",
+          value: true,
+          saveInto: ri!cancel,
+          submit: true,
+          style: "NORMAL",
+          validate: false
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>ordenDet</name>
+            <type>
+                <name>GV_OrdDetalles_CDT?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>GV_Orden</name>
+            <type>
+                <name>GV_Orden_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>id_cliente</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621695"/>
+    </history>
+</contentHaul>

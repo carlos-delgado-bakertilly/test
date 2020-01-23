@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619946</versionUuid>
+    <rule>
+        <name>GV_AsignarPiezaDisponibleADetalleOrdenDemo</name>
+        <uuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619902</uuid>
+        <description>Asigna una pieza específica al detalle de una orden (DEMO)</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_339922</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_forEach"(
+  ri!detalle,
+  'type!{urn:com:appian:types}GV_OrdDetalles_CDT'(
+    id: fv!item.id,
+    idPieza: index(#"_a-0000e319-718a-8000-9ba2-011c48011c48_358103"(fv!item.idProducto), "id", {}),
+    idOrden: fv!item.idOrden,
+    idProducto: fv!item.idProducto,
+    cantidad: fv!item.cantidad,
+    estado: fv!item.estado,
+    precioUnidad: fv!item.precioUnidad,
+    precioTotal: fv!item.precioTotal,
+    subTotal: fv!item.subTotal
+  )
+)</definition>
+        <namedTypedValue>
+            <name>detalle</name>
+            <type>
+                <name>GV_OrdDetalles_CDT?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619946"/>
+    </history>
+</contentHaul>

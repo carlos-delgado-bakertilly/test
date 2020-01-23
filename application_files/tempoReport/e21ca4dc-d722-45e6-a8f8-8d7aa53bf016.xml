@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>71cdb031-dbd3-42a4-9e9f-ca807b8b3fb2</versionUuid>
+    <tempoReport a:uuid="e21ca4dc-d722-45e6-a8f8-8d7aa53bf016" name="GV_ReportPedidos">
+        <a:description></a:description>
+        <a:uiExpr>=#"_a-0000e319-718a-8000-9ba2-011c48011c48_361035"()</a:uiExpr>
+        <a:urlStub>wthbMg</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+                <groupUuid>_e-0000e39b-e6a8-8000-9aee-01075c01075c_1233</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="71cdb031-dbd3-42a4-9e9f-ca807b8b3fb2"/>
+    </history>
+</tempoReportHaul>

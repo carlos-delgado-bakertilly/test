@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_370124</versionUuid>
+    <rule>
+        <name>GV_ValidacionEntregaPiezasaCliente</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_367351</uuid>
+        <description>Interfaz para validación del orden/cliente para entrega final</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!data: #"_a-0000e319-718a-8000-9ba2-011c48011c48_353183"(),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "Entrega de Piezas a Cliente",
+    contents: {
+      #"SYSTEM_SYSRULES_boxLayout"(
+        label: "Información de la orden",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_integerField"(
+                    label: "Id Orden",
+                    labelPosition: "ABOVE",
+                    value: ri!orden.id,
+                    saveInto: ri!orden.id,
+                    refreshAfter: "UNFOCUS",
+                    readOnly: true,
+                    validations: {}
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Nombre",
+                    labelPosition: "ABOVE",
+                    value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_354048"(ri!orden.idCliente).nombre,
+                    saveInto: {},
+                    refreshAfter: "UNFOCUS",
+                    readOnly: true,
+                    validations: {}
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Cédula",
+                    labelPosition: "ABOVE",
+                    value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_354048"(ri!orden.idCliente).cedula,
+                    saveInto: {},
+                    refreshAfter: "UNFOCUS",
+                    readOnly: true,
+                    validations: {}
+                  )
+                }
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_barcodeField"(
+            label: "Lectura de QR",
+            labelPosition: "ABOVE",
+            acceptedTypes: {},
+            value: ri!qrContent,
+            saveInto: ri!qrContent,
+            refreshAfter: "UNFOCUS",
+            validations: {}
+          ),
+          #"SYSTEM_SYSRULES_gridField_v1"(
+            label: "Piezas",
+            labelPosition: "ABOVE",
+            data: ri!OrdDetalles,
+            columns: {
+              #"SYSTEM_SYSRULES_gridColumn"(
+                label: "Producto",
+                value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!row.idProducto).nombre
+              ),
+              #"SYSTEM_SYSRULES_gridColumn"(
+                label: "Marca",
+                value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!row.idProducto).marca
+              ),
+              #"SYSTEM_SYSRULES_gridColumn"(
+                label: "Modelo",
+                value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!row.idProducto).modelo
+              ),
+              #"SYSTEM_SYSRULES_gridColumn"(
+                label: "Cantidad",
+                value: fv!row.cantidad
+              )
+            },
+            validations: {}
+          )
+        },
+        style: "ACCENT",
+        marginBelow: "STANDARD"
+      ),
+      #"SYSTEM_SYSRULES_fileUploadField_v1"(
+        label: "Firma del cliente",
+        labelPosition: "ABOVE",
+        target: #"_a-0000e319-718a-8000-9ba2-011c48011c48_369705",
+        filenames: "firmaCliente",
+        maxSelections: 1,
+        value: ri!orden.firmaCliente,
+        saveInto: ri!orden.firmaCliente,
+        required: true,
+        validations: {},
+        buttonsize: "STANDARD"
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Aceptar",
+          submit: true,
+          style: "PRIMARY"
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Cancelar",
+          value: true,
+          saveInto: ri!cancel,
+          submit: true,
+          style: "NORMAL"
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>OrdDetalles</name>
+            <type>
+                <name>GV_OrdDetalles_CDT?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>orden</name>
+            <type>
+                <name>GV_Orden_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>qrContent</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_370124"/>
+    </history>
+</contentHaul>

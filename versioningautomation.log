@@ -1,0 +1,657 @@
+2020-01-23 11:09:14,457 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:value not provided],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:09:16,955 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:09:16,955 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:09:17,037 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:09:17,075 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:09:17,077 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:09:47,061 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:value not provided],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:09:48,637 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:09:48,638 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:09:48,650 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:09:48,675 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:09:48,675 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:11:23,369 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:11:25,331 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:11:25,331 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:11:25,342 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:11:25,366 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:11:25,367 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:14:26,338 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:origin],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:14:27,970 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:14:27,971 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:14:27,980 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:14:28,003 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:14:28,004 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:14:36,604 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:master],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:14:38,239 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:14:38,239 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:14:38,254 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:14:38,297 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:14:38,298 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:15:23,211 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:15:24,789 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:15:24,790 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:15:24,802 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:15:24,835 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:15:24,837 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:15:37,426 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:15:39,108 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:15:39,109 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:15:39,121 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:15:39,147 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:15:39,148 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:16:44,377 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test.git],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:16:44,403 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Local repository path does not exist.
+2020-01-23 11:16:44,404 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - New local repository path created: C:\Users\BTRD DIGITAL\Desktop\test.git
+2020-01-23 11:16:45,194 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:16:45,195 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.api.errors.InvalidConfigurationException: No value for key remote.origin.url found in configuration
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:266)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:522)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:17:16,139 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:17:17,770 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:17:17,770 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:17:17,780 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:17:17,802 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:17:17,803 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:17:41,218 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:17:42,836 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:17:42,836 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:17:42,846 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:17:42,869 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:17:42,871 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:19:35,179 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:19:37,033 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Attempting to pull from empty directory. Initializing git repo with README.md.
+2020-01-23 11:19:37,033 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Initializing empty Git repository with one readme file
+2020-01-23 11:19:37,041 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Creating readme file
+2020-01-23 11:19:37,065 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - There was an error completing the selected operation. Additional details will be logged.
+2020-01-23 11:19:37,066 [main] ERROR com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - Details of error: 
+org.eclipse.jgit.errors.NoWorkTreeException: Bare Repository has neither a working tree, nor an index
+	at org.eclipse.jgit.lib.Repository.getIndexFile(Repository.java:1125)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:293)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1183)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:148)
+	at com.appiancorp.ps.automatedversioning.GitObject.commit(GitObject.java:163)
+	at com.appiancorp.ps.automatedversioning.GitObject.initializeEmptyGitRepo(GitObject.java:516)
+	at com.appiancorp.ps.automatedversioning.GitObject.gitPull(GitObject.java:526)
+	at com.appiancorp.ps.automatedversioning.GitObject.update(GitObject.java:136)
+	at com.appiancorp.ps.automatedversioning.VCSAndBuildController.addContents(VCSAndBuildController.java:58)
+	at com.appiancorp.ps.automatedversioning.AutomatedVersioningManager.main(AutomatedVersioningManager.java:154)
+2020-01-23 11:21:09,665 [main] INFO  com.appiancorp.ps.automatedversioning.AutomatedVersioningManager - VersionManagerProperties:
+[vcUsername:carlos-delgado-bakertilly],
+[vcPassword:***],
+[commitMessage:value not provided],
+[action:addContents],
+[applicationPath:C:\Users\BTRD DIGITAL\Desktop\test\Viamar.zip],
+[adminConsolePath:value not provided],
+[ddlPath:C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql],
+[flywayPath:value not provided],
+[ddlDs:jdbc/Appian],
+[uuid:value not provided],
+[applicationName:value not provided],
+[startHash:value not provided],
+[endHash:value not provided],
+[packagePath:value not provided],
+[versionControlType:GIT],
+[repoUrl:https://github.com/carlos-delgado-bakertilly/test.git],
+[localRepoPath:C:\Users\BTRD DIGITAL\Desktop\test\],
+[branchName:value not provided],
+[appianObjectsRepoPath:value not provided],
+[noUpdate:value not provided],
+[enableFolderListenerCommitMessage:value not provided],
+[proxyPort:value not provided],
+[proxyUrl:value not provided],
+[proxyUsername:value not provided],
+[proxyPassword:value not provided],
+
+2020-01-23 11:21:11,370 [main] INFO  com.appiancorp.ps.automatedversioning.GitObject - Local repo updated successfully
+2020-01-23 11:21:11,583 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Unzipping application to repository
+2020-01-23 11:21:11,642 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Pieza_CDT.xsd
+2020-01-23 11:21:11,649 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Cliente_CDT.xsd
+2020-01-23 11:21:11,655 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Sucursal_CDT.xsd
+2020-01-23 11:21:11,662 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Orden_CDT.xsd
+2020-01-23 11:21:11,670 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_OrdDetalles_CDT.xsd
+2020-01-23 11:21:11,677 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Producto_CDT.xsd
+2020-01-23 11:21:11,685 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Vehiculos.xsd
+2020-01-23 11:21:11,691 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Picking_CDT.xsd
+2020-01-23 11:21:11,697 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Picking_Detail_CDT.xsd
+2020-01-23 11:21:11,705 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Suplidor_CDT.xsd
+2020-01-23 11:21:11,713 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\datatype/%7Burn%3Acom%3Aappian%3Atypes%7DGV_Pedidos.xsd
+2020-01-23 11:21:11,751 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\group/_e-0000e39b-e6a8-8000-9aee-01075c01075c_1218.xml
+2020-01-23 11:21:11,757 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\group/_e-0000e39b-e6a8-8000-9aee-01075c01075c_1233.xml
+2020-01-23 11:21:11,765 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\dataStore/_a-0000e319-718a-8000-9ba2-011c48011c48_332471.xml
+2020-01-23 11:21:11,774 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331426.xml
+2020-01-23 11:21:11,779 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331440.xml
+2020-01-23 11:21:11,788 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_331446.xml
+2020-01-23 11:21:11,795 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332328.xml
+2020-01-23 11:21:11,802 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332407.xml
+2020-01-23 11:21:11,826 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332414.xml
+2020-01-23 11:21:11,832 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332887/file.png
+2020-01-23 11:21:11,839 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332887.xml
+2020-01-23 11:21:11,845 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332894.xml
+2020-01-23 11:21:11,853 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332388.xml
+2020-01-23 11:21:11,860 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337267/file.jpg
+2020-01-23 11:21:11,868 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337267.xml
+2020-01-23 11:21:11,875 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332432.xml
+2020-01-23 11:21:11,886 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332453/file.jpg
+2020-01-23 11:21:11,893 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332453.xml
+2020-01-23 11:21:11,903 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_332875.xml
+2020-01-23 11:21:11,912 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333074.xml
+2020-01-23 11:21:11,921 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333213.xml
+2020-01-23 11:21:11,928 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333725.xml
+2020-01-23 11:21:11,937 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333757.xml
+2020-01-23 11:21:11,944 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_333916.xml
+2020-01-23 11:21:11,962 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/baa76074-c039-41bb-8f2c-d7a958a8ec18.xml
+2020-01-23 11:21:11,971 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_335349.xml
+2020-01-23 11:21:11,978 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_335527.xml
+2020-01-23 11:21:11,987 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336033.xml
+2020-01-23 11:21:11,993 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336045.xml
+2020-01-23 11:21:12,001 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336110.xml
+2020-01-23 11:21:12,008 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336116.xml
+2020-01-23 11:21:12,016 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336251.xml
+2020-01-23 11:21:12,022 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336324.xml
+2020-01-23 11:21:12,028 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_336330.xml
+2020-01-23 11:21:12,037 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337255/file.jpg
+2020-01-23 11:21:12,044 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_337255.xml
+2020-01-23 11:21:12,054 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339223/file.html
+2020-01-23 11:21:12,060 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339223.xml
+2020-01-23 11:21:12,076 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339872/file.html
+2020-01-23 11:21:12,084 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339872.xml
+2020-01-23 11:21:12,090 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339922.xml
+2020-01-23 11:21:12,097 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_352411.xml
+2020-01-23 11:21:12,106 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_339916.xml
+2020-01-23 11:21:12,113 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340021.xml
+2020-01-23 11:21:12,140 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340077.xml
+2020-01-23 11:21:12,146 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340515.xml
+2020-01-23 11:21:12,154 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340521.xml
+2020-01-23 11:21:12,162 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_340527.xml
+2020-01-23 11:21:12,170 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341633.xml
+2020-01-23 11:21:12,176 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341651.xml
+2020-01-23 11:21:12,185 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_341754.xml
+2020-01-23 11:21:12,191 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_342175.xml
+2020-01-23 11:21:12,198 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_347797.xml
+2020-01-23 11:21:12,216 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_348020.xml
+2020-01-23 11:21:12,223 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_350885.xml
+2020-01-23 11:21:12,229 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351565.xml
+2020-01-23 11:21:12,236 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351589.xml
+2020-01-23 11:21:12,242 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351583.xml
+2020-01-23 11:21:12,251 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_351601.xml
+2020-01-23 11:21:12,258 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_352946.xml
+2020-01-23 11:21:12,268 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_353183.xml
+2020-01-23 11:21:12,276 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_353826.xml
+2020-01-23 11:21:12,288 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354074.xml
+2020-01-23 11:21:12,307 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354048.xml
+2020-01-23 11:21:12,316 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_357580.xml
+2020-01-23 11:21:12,325 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354260.xml
+2020-01-23 11:21:12,335 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354323.xml
+2020-01-23 11:21:12,343 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_354529.xml
+2020-01-23 11:21:12,352 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358103.xml
+2020-01-23 11:21:12,359 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365188.xml
+2020-01-23 11:21:12,369 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358271.xml
+2020-01-23 11:21:12,378 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_358976.xml
+2020-01-23 11:21:12,388 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModelFolder/_g-0000e305-b931-8000-f92f-7f0000014e7a_467.xml
+2020-01-23 11:21:12,400 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32e-2154-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:12,408 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361493.xml
+2020-01-23 11:21:12,420 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361035.xml
+2020-01-23 11:21:12,429 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361258.xml
+2020-01-23 11:21:12,439 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_361277.xml
+2020-01-23 11:21:12,450 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_364542.xml
+2020-01-23 11:21:12,460 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_364839.xml
+2020-01-23 11:21:12,472 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365465.xml
+2020-01-23 11:21:12,486 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_365807.xml
+2020-01-23 11:21:12,494 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_366515.xml
+2020-01-23 11:21:12,505 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369699.xml
+2020-01-23 11:21:12,516 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369705.xml
+2020-01-23 11:21:12,526 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_367351.xml
+2020-01-23 11:21:12,536 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_367919.xml
+2020-01-23 11:21:12,545 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_368441.xml
+2020-01-23 11:21:12,588 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_368895.xml
+2020-01-23 11:21:12,637 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369150/file.html
+2020-01-23 11:21:12,661 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369150.xml
+2020-01-23 11:21:12,674 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_369733.xml
+2020-01-23 11:21:12,686 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370879.xml
+2020-01-23 11:21:12,703 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370885.xml
+2020-01-23 11:21:12,723 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370903/file.jpg
+2020-01-23 11:21:12,736 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370903.xml
+2020-01-23 11:21:12,746 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_370922.xml
+2020-01-23 11:21:12,757 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371021.xml
+2020-01-23 11:21:12,770 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371027.xml
+2020-01-23 11:21:12,783 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371099/file.jpg
+2020-01-23 11:21:12,799 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371099.xml
+2020-01-23 11:21:12,806 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371367/file.png
+2020-01-23 11:21:12,819 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371367.xml
+2020-01-23 11:21:12,828 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371373.xml
+2020-01-23 11:21:12,841 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371332.xml
+2020-01-23 11:21:12,853 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371355.xml
+2020-01-23 11:21:12,862 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371573.xml
+2020-01-23 11:21:12,873 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371567.xml
+2020-01-23 11:21:12,892 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32b-b095-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:12,907 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e324-eafa-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:12,922 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e32d-e3d6-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:12,930 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/1f9d6a5c-b536-474e-bfc7-a607b59b2151.xml
+2020-01-23 11:21:12,964 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371698.xml
+2020-01-23 11:21:12,976 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0016e3a4-cd77-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:12,985 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_371718.xml
+2020-01-23 11:21:12,994 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_372068.xml
+2020-01-23 11:21:12,999 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373406/file.png
+2020-01-23 11:21:13,008 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373406.xml
+2020-01-23 11:21:13,020 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e319-718a-8000-9ba2-011c48011c48_373413.xml
+2020-01-23 11:21:13,030 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_382999.xml
+2020-01-23 11:21:13,077 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_383004.xml
+2020-01-23 11:21:13,134 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e337-c405-8000-9ba2-011c48011c48_382986.xml
+2020-01-23 11:21:13,144 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\content/_a-0000e39b-e6a8-8000-9ba2-011c48011c48_619902.xml
+2020-01-23 11:21:13,160 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e317-ea7d-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,189 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/006de322-2d67-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,207 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/006de322-4382-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,230 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0040e322-46ae-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,244 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e322-66ff-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,260 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-5608-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,270 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-76d9-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,282 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e323-7ae9-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,295 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e324-b1ab-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,326 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e325-4b27-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,354 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/003ae325-f9a8-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,368 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e333-4b9d-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,381 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\processModel/0002e334-7ef3-8000-f92f-7f0000014e7a.xml
+2020-01-23 11:21:13,395 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\recordType/bcf0b8a1-ecb2-410f-9137-d4f9928d7f23.xml
+2020-01-23 11:21:13,406 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/6a6b8d53-182c-415b-9410-9d252b74c2fc.xml
+2020-01-23 11:21:13,417 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/e21ca4dc-d722-45e6-a8f8-8d7aa53bf016.xml
+2020-01-23 11:21:13,424 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\tempoReport/28152498-f6b6-433a-859d-eaf7e129ade2.xml
+2020-01-23 11:21:13,434 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\site/89a40af9-2775-42de-a0d5-188db437e888.xml
+2020-01-23 11:21:13,441 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\site/9c1d7157-0e7c-4c2d-aca7-9e107eab70fb.xml
+2020-01-23 11:21:13,451 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\application/_a-0000e305-b931-8000-9ba2-011c48011c48_311647.xml
+2020-01-23 11:21:13,514 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\MANIFEST.MF
+2020-01-23 11:21:13,557 [main] INFO  com.appiancorp.ps.automatedversioning.VersionUtils - Successfully extracted file C:\Users\BTRD DIGITAL\Desktop\test\\application_files\META-INF\_a-0000e305-b931-8000-9ba2-011c48011c48_311647\export.log
+2020-01-23 11:21:13,773 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Checking for DDLs
+2020-01-23 11:21:13,774 [main] INFO  com.appiancorp.ps.automatedversioning.helper.RepoHelper - Copying source file at C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql to C:\Users\BTRD DIGITAL\Desktop\test\ddl_files
+2020-01-23 11:21:13,778 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - C:\Users\BTRD DIGITAL\Desktop\test\gv-db.sql added successfully
+2020-01-23 11:21:13,778 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Generating metadata
+2020-01-23 11:21:13,790 [main] INFO  com.appiancorp.ps.automatedversioning.VCSAndBuildController - Checking for Flyway directories

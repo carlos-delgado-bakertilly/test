@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_348068</versionUuid>
+    <rule>
+        <name>GV_CrearPago</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_332388</uuid>
+        <description>Formulario para hacer Pago de Ordenes en Linea</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!search,
+  local!sort: "descending",
+  local!currentStep: 2,
+  local!cardNumber,
+  local!expirationDate,
+  local!ccv,
+  local!amount: 2500,
+  local!tax: product(local!amount, 0.18), 
+  local!paymentComplete: false,
+  local!paymentErrorMessage,
+  local!paymentTransaccion: "1S664513TL257621M",
+  local!message: "Pago en Proceso  | ",
+  local!complete: false,
+#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "",
+  contents: {
+        {
+          #"SYSTEM_SYSRULES_billboardLayout"(
+            backgroundMedia: #"SYSTEM_SYSRULES_documentImage"(
+              document: #"_a-0000e319-718a-8000-9ba2-011c48011c48_332432"
+            ),
+            overlayStyle: "DARK",
+            overlayContents: {
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_sideBySideLayout"(
+                        items: {
+                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                  text: {
+                                    "GRUPO VIAMAR"
+                                  },
+                                  size: "LARGE"
+                                ),
+                                char(10),
+                                #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                  text: {
+                                    "ENSACHE KENNEDY"
+                                  },
+                                  size: "MEDIUM"
+                                )
+                              }
+                            )
+                          ),
+                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                              label: "",
+                              labelPosition: "ABOVE",
+                              value: {
+                                with(
+                                  /* Normally, ri!resort.studentRating would be used directly. This example adds a variable *
+                                   * because the test input is a dictionary and not a CDT value from a query. Therefore,  *
+                                   * the fields are not strongly typed and casting is necessary.                          */
+                                  local!number: todecimal(4.2),
+                                  local!color: if(local!number &lt; 3, "NEGATIVE", "#FFF"),
+                                  {
+                                    /* Simple loop that makes five stars and decides which should be filled *
+                                     * as well as what color all of them should be, based on the rating.    */
+                                    #"SYSTEM_SYSRULES_forEach"(
+                                      items: enumerate(5) + 1,
+                                      expression: #"SYSTEM_SYSRULES_richTextIcon"(
+                                        icon: if(
+                                          fv!index &lt;= tointeger(floor(local!number)),
+                                          "star",
+                                          if(
+                                            fv!index &lt;= tointeger(ceiling(local!number)),
+                                            "star-half-o",
+                                            "star-o"
+                                          )
+                                        ),
+                                        color: local!color,
+                                        size: if(#"SYSTEM_SYSRULES_isNativePhone"(), "MEDIUM", "LARGE")
+                                      )
+                                    )
+                                  }
+                                ),
+                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: {"4.5"}, color: "STANDARD", size: if(#"SYSTEM_SYSRULES_isNativePhone"(), "MEDIUM", "LARGE"))
+                              }
+                            ),
+                            width: "MINIMIZE"
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                      
+                    }
+                  )
+                },
+                alignVertical: "MIDDLE"
+              )
+            },
+            height: "SHORT",
+            marginBelow: "STANDARD"
+          ),
+          #"SYSTEM_SYSRULES_sectionLayout_v1"(
+            label: "",
+            contents: {
+               #"SYSTEM_SYSRULES_milestoneField"(
+                labelPosition: "ABOVE",
+                steps: {"Confirmacion del Cliente", "Realizar Pago", "Confirmación"},
+                links: {},
+                active: local!currentStep
+               )
+            }
+          ),
+          #"SYSTEM_SYSRULES_sectionLayout_v1"(
+            label: "",
+            contents: {},
+            showWhen: and(local!currentStep = {1})
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    label: "INFORMACION DEL PAGO",
+                    contents: {
+                      #"SYSTEM_SYSRULES_imageField_v1"(
+                        label: "",
+                        labelPosition: "ABOVE",
+                        images: {
+                          #"SYSTEM_SYSRULES_documentImage"(
+                            document: #"_a-0000e205-caa1-8000-9ba2-011c48011c48_86058"
+                          )
+                        },
+                        size: "MEDIUM",
+                        isThumbnail: false,
+                        style: "STANDARD"
+                      ),
+                      #"SYSTEM_SYSRULES_checkboxField"(
+                        label: "",
+                        labelPosition: "ABOVE",
+                        choiceLabels: {"Use same mailing address"},
+                        choiceValues: true,
+                        value: true,
+                        saveInto: {},
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "No. de Tarjeta",
+                        labelPosition: "ABOVE",
+                        placeholder: "0000111122223333",
+                        value: local!cardNumber,
+                        saveInto: {
+                          local!cardNumber,
+                          a!save(local!paymentErrorMessage, null)
+                        },
+                        refreshAfter: "KEYPRESS",
+                        required: true,
+                        disabled: local!paymentComplete,
+                        validations:  {
+                          if(len(local!cardNumber) = 16, null, "Digite un No. de tarjeta que sea valido!")
+                          /*if(isnull(local!cardNumber), null, if(find("@", local!varA)&lt;&gt;0, null, "You need an @ character!"))*/
+                        }
+                      ),
+                      #"SYSTEM_SYSRULES_integerField"(
+                        label: "Fecha de Expiración",
+                        labelPosition: "ABOVE",
+                        placeholder: "MMYY",
+                        value: local!expirationDate,
+                        saveInto: {
+                          local!expirationDate,
+                          a!save(local!paymentErrorMessage, null)
+                        },
+                        refreshAfter: "KEYPRESS",
+                        required: true,
+                        disabled: local!paymentComplete
+                      ),
+                      #"SYSTEM_SYSRULES_integerField"(
+                        label: "CCV",
+                        labelPosition: "ABOVE",
+                        placeholder: "999",
+                        value: local!ccv,
+                        saveInto: {
+                          local!ccv,
+                          a!save(local!paymentErrorMessage, null)
+                        },
+                        refreshAfter: "KEYPRESS",
+                        required: true,
+                        disabled: local!paymentComplete
+                      ),
+                      if(local!paymentComplete,
+                        {
+                          #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            value: {
+                              #"SYSTEM_SYSRULES_richTextImage"(image: #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"(icon: "STATUS_OK"))),
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(text: local!message , color: "SECONDARY", style: "STRONG"),
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(text: "ID de la Transacción: " &amp; local!paymentTransaccion, style: "UNDERLINE", showWhen: local!complete)
+                            }
+                          )
+                        },
+                        #"SYSTEM_SYSRULES_ButtonLayout"(
+                          primaryButtons: {
+                            #"SYSTEM_SYSRULES_ButtonWidget"(
+                              label: "Procesar Pago",
+                              saveInto: #"ba9c7630-f31f-408d-86e3-39bbf33de0ba"(
+                              cardNumber: local!cardNumber,
+                              expirationDate: local!expirationDate,
+                              ccv: local!ccv,
+                              amount: sum(local!amount, local!tax),
+                              onSuccess:{
+                                /* Handle successful payment and show comfirmation */
+                                a!save(local!paymentErrorMessage, null),
+                                a!save(local!paymentComplete, true),
+                                /*a!save(local!paymentTransaccion, fv!result.body.transactionResponse.transId)*/
+                              },
+                              onError: {
+                                /* Handle HTTP error */
+                                a!save(local!paymentErrorMessage, fv!error.message)
+                              }
+                            ),
+                              style: "PRIMARY",
+                              disabled: not(isnull(local!paymentErrorMessage)),
+                              validate: true
+                            )
+                          }
+                        )
+                      ),
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: {
+                              "Las transacciones con tarjeta de crédito son manejadas por nuestro procesador de pago seguro. No almacenamos la información de su tarjeta de crédito."
+                            },
+                            style: {
+                              "EMPHASIS"
+                            }
+                          )
+                        }
+                      )
+                    },
+                    validations: if(isnull(local!paymentErrorMessage),
+                      {},
+                      local!paymentErrorMessage
+                    )
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {},
+                width: "NARROW"
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                      contents: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                         value: {
+                           #"SYSTEM_SYSRULES_richTextIcon"(
+                             icon: "check-circle-o",
+                             color: "POSITIVE",
+                             size: "LARGE"
+                           ),
+                           char(10),
+                           #"SYSTEM_SYSRULES_richTextItem_v1"(
+                             text: {
+                               "Hemos recibido la solicitud de su orden. Gracias por preferirnos!"
+                             },
+                             color: "POSITIVE",
+                             size: "MEDIUM"
+                           ),
+                           char(10)
+                         },
+                              align: "CENTER"
+                    ),
+                    style: "SUCCESS",
+                    height: "AUTO",
+                    marginBelow: "STANDARD"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {},
+                width: "NARROW"
+              )
+            },
+            showWhen: or(local!currentStep = {3})
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {},
+                width: "NARROW"
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_imageField_v1"(
+                    label: "",
+                    labelPosition: "ABOVE",
+                    images: {
+                      #"SYSTEM_SYSRULES_documentImage"(
+                        document: #"_a-0000e319-718a-8000-9ba2-011c48011c48_332894"
+                      )
+                    },
+                    size: "MEDIUM",
+                    isThumbnail: false,
+                    style: "STANDARD",
+                    align: "CENTER"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {},
+                width: "NARROW"
+              )
+            },
+            showWhen: or(local!currentStep = {3})
+          )
+        }
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Continuar",
+          value: local!currentStep + 1,
+          saveInto: {
+            local!currentStep,
+            a!save(local!message, "Pago Completado  | "),
+            a!save(local!complete, true)
+          },
+          showWhen: local!currentStep = 2,
+          style: "PRIMARY",
+          disabled: not(local!paymentComplete),
+          validate: true
+        ),
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "FINALIZAR",
+        confirmHeader: "Esta seguro que quiere realizar el pago?",
+        confirmButtonLabel: "Si",
+        cancelButtonLabel: "No",
+        saveInto: {},
+        submit: true,
+        showWhen: local!currentStep = 3,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {}
+  )
+)
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_348068"/>
+    </history>
+</contentHaul>

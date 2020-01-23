@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_364576</versionUuid>
+    <rule>
+        <name>GV_CambiarEstadoOrden</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_364542</uuid>
+        <description>Cambiar estado de una orden</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_339922</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{urn:com:appian:types}GV_Orden_CDT'(
+  id: ri!Orden.id,
+  idCliente: ri!Orden.idCliente,
+  estado: ri!estado,
+  listoParaBuscar: ri!Orden.listoParaBuscar,
+  fechaCreacion: ri!Orden.fechaCreacion,
+  fechaEstimada: ri!Orden.fechaEstimada,
+  total: ri!Orden.total,
+  nombreVendedor: ri!Orden.nombreVendedor,
+  idSucursal: ri!Orden.idSucursal,
+  codigoQR: ri!Orden.codigoQR
+)</definition>
+        <namedTypedValue>
+            <name>Orden</name>
+            <type>
+                <name>GV_Orden_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>estado</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_364576"/>
+    </history>
+</contentHaul>

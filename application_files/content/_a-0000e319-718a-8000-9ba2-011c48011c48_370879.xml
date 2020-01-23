@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_627758</versionUuid>
+    <rule>
+        <name>GV_HomePage</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_370879</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    contents: {
+      #"SYSTEM_SYSRULES_billboardLayout"(
+        backgroundMedia: #"SYSTEM_SYSRULES_documentImage"(
+          document: #"_a-0000e36e-c2bf-8000-9ba2-011c48011c48_461686"
+        ),
+        overlayStyle: "DARK",
+        overlayContents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sideBySideLayout"(
+                    items: {
+                      #"SYSTEM_SYSRULES_sideBySideItem"(
+                        item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            #"SYSTEM_SYSRULES_richTextItem_v1"(
+                              text: "Inventory &amp; ",
+                              color: "#C8EC50",
+                              size: "MEDIUM_PLUS"
+                            ),
+                            #"SYSTEM_SYSRULES_richTextItem_v1"(
+                              text: "Logistics",
+                              size: "MEDIUM_PLUS"
+                            ),
+                            char(
+                              10
+                            ),
+                            #"SYSTEM_SYSRULES_richTextItem_v1"(
+                              text: "Welcome, ",
+                              size: "MEDIUM"
+                            ),
+                            #"SYSTEM_SYSRULES_richTextItem_v1"(
+                              text: user(loggedInUser(), "firstName") &amp; " " &amp; user(loggedInUser(), "lastName") &amp; "!",
+                              color: "#C8EC50",
+                              size: "MEDIUM"
+                            )
+                          },
+                          align: "LEFT"
+                        ),
+                        width: "4X"
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    spacing: "SPARSE"
+                  )
+                },
+                width: "MEDIUM"
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  /*a!richTextDisplayField(*/
+                  /*value: {*/
+                  /*char(10),*/
+                  /*a!richTextItem(*/
+                  /*text: {*/
+                  /*"BUDGET DATA MANAGEMENT"*/
+                  /*},*/
+                  /*size: "LARGE",*/
+                  /*style: {*/
+                  /*"STRONG"*/
+                  /*}*/
+                  /*)*/
+                  /*},*/
+                  /*align: "CENTER"*/
+                  /*)*/
+                },
+                width: "MEDIUM"
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_imageField_v1"(
+                    images: #"SYSTEM_SYSRULES_documentImage"(
+                      document: #"_a-0000e305-b931-8000-9ba2-011c48011c48_298339"
+                    ),
+                    align: "END"
+                  )
+                },
+                width: "MEDIUM"
+              )
+            }
+          )
+        },
+        height: "SHORT",
+        marginBelow: "STANDARD"
+      ),
+    }
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "",
+    contents: {
+      #"_a-0000e39b-e6a8-8000-9ba2-011c48011c48_594492"("bolt", "ACTION", "PANEL"),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                  value: {
+                    #"SYSTEM_SYSRULES_richTextIcon"(
+                      icon: "ship",
+                      color: "#696969",
+                      size: "LARGE"
+                    ),
+                    char(10),
+                    #"SYSTEM_SYSRULES_richTextItem_v1"(
+                      text: {
+                        "MARINE ORDERS"
+                      },
+                      color: "#696969",
+                      size: "MEDIUM",
+                      style: {
+                        "STRONG"
+                      }
+                    ),
+                    char(10),
+                    "Nearest shipment: " &amp; #"_a-0000e319-718a-8000-9ba2-011c48011c48_361277"()[1].fechaEstimada
+                  },
+                  align: "CENTER"
+                ),
+                /* Setting this variable would be used to navigate to a category of answers */
+                link: #"SYSTEM_SYSRULES_startProcessLink"(
+                  label: "Pedidos Maritimos",
+                  processModel:  #"_a-0000e319-718a-8000-9ba2-011c48011c48_361493"
+                ),
+                height: "AUTO",
+                marginBelow: "STANDARD"
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                  value: {
+                    #"SYSTEM_SYSRULES_richTextIcon"(
+                      icon: "plus-circle",
+                      color: "#696969",
+                      size: "LARGE"
+                    ),
+                    char(10),
+                    #"SYSTEM_SYSRULES_richTextItem_v1"(
+                      text: {
+                        "NEW ORDER"
+                      },
+                      color: "#696969",
+                      size: "MEDIUM",
+                      style: {
+                        "STRONG"
+                      }
+                    ),
+                    char(10),
+                    "Create new order for client."
+                  },
+                  align: "CENTER"
+                ),
+                /* Setting this variable would be used to navigate to a category of answers */
+                link: #"SYSTEM_SYSRULES_startProcessLink"(
+                  label: "New Order!",
+                  processModel: #"_a-0000e319-718a-8000-9ba2-011c48011c48_371718"
+                ),
+                height: "AUTO",
+                marginBelow: "STANDARD" 
+              )
+            }
+          ),
+          /*a!columnLayout(*/
+            /*contents: {*/
+              /*a!cardLayout(*/
+                /*contents: a!richTextDisplayField(*/
+                  /*value: {*/
+                    /*a!richTextIcon(*/
+                      /*icon: "plane",*/
+                      /*color: "#696969",*/
+                      /*size: "LARGE"*/
+                    /*),*/
+                    /*char(10),*/
+                    /*a!richTextItem(*/
+                      /*text: {*/
+                        /*"AIR ORDERS"*/
+                      /*},*/
+                      /*color: "#696969",*/
+                      /*size: "MEDIUM",*/
+                      /*style: {*/
+                        /*"STRONG"*/
+                      /*}*/
+                    /*),*/
+                    /*char(10),*/
+                    /*"Nearest shipment: " &amp; rule!GV_GetFechaMasEstimada()[4].fechaEstimada*/
+                  /*},*/
+                  /*align: "CENTER"*/
+                /*),*/
+                /* Setting this variable would be used to navigate to a category of answers */
+                /*link: a!startProcessLink(*/
+                  /*label: "Pedidos Aereos"*/
+                  /*processModel: cons!CRM_BT_OPPORTUNITY_PROCESS*/
+                /*),*/
+                /*height: "AUTO",*/
+                /*marginBelow: "STANDARD" */
+              /*)*/
+            /*}*/
+          /*)*/
+        }
+      )
+    }
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    contents: {
+      #"_a-0000e39b-e6a8-8000-9ba2-011c48011c48_594492"("reorder", "Order", "List"),
+      #"_a-0000e319-718a-8000-9ba2-011c48011c48_371332"()      
+    }
+  )
+}</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_627758"/>
+    </history>
+</contentHaul>

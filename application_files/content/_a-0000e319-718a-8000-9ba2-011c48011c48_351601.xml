@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_373321</versionUuid>
+    <rule>
+        <name>GV_PedidoEspecialAereo</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_351601</uuid>
+        <description>Creación de un nuevo pedido especial</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!product: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(ri!ordDetalles.idProducto),
+  local!productosNoDisp: #"SYSTEM_SYSRULES_forEach"(ri!ordDetalles, #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!item.idProducto)),
+  local!order: #"_a-0000e319-718a-8000-9ba2-011c48011c48_351583"(ri!ordDetalles.idOrden),
+  local!client: #"_a-0000e319-718a-8000-9ba2-011c48011c48_354048"(ri!orden.idCliente),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "Pedido Especial",
+    contents: {
+      #"SYSTEM_SYSRULES_billboardLayout_v1"(
+        backgroundMedia: #"SYSTEM_SYSRULES_webImage"(
+          source: "https://images.todocuba.org/2016/01/Imagen-servicio-aereo.png"
+        ),
+        backgroundColor: "#f0f0f0",
+        height: "MEDIUM",
+        marginbelow: "STANDARD",
+        overlay: #"SYSTEM_SYSRULES_barOverlay"(
+          contents: {
+
+            #"SYSTEM_SYSRULES_columnsLayout"(
+              columns: {
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_sideBySideLayout"(
+                      items: {
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                text: {
+                                  "GRUPO VIAMAR"
+                                },
+                                size: "LARGE"
+                              ),
+                              char(10),
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                text: {
+                                  "VIA AEREA"
+                                },
+                                size: "MEDIUM"
+                              )
+                            }
+                          )
+                        )
+                      },
+                      alignVertical: "MIDDLE"
+                    )
+
+                  }
+                )
+              },
+              alignVertical: "MIDDLE"
+            )
+          }
+        )
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Información",
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_boxLayout"(
+                    label: "Información de la orden",
+                    contents: {
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Número de orden",
+                        labelPosition: "ADJACENT",
+                        value: local!order.id,
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        readonly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Nombre del Cliente",
+                        labelPosition: "ADJACENT",
+                        value: local!client.nombre,
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        readonly: true,
+                        validations: {}
+                      )
+                    },
+                    style: "ACCENT",
+                    marginBelow: "STANDARD"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {#"SYSTEM_SYSRULES_boxLayout"(
+                  label: "Producto(s) elegible para pedido aéreo",
+                  contents: {
+                    #"SYSTEM_SYSRULES_columnsLayout"(
+                      columns: {
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_imageField_v1"(
+                              label: "",
+                              labelPosition: "ABOVE",
+                              images: {
+                                #"SYSTEM_SYSRULES_webImage"(
+                                  source: "https://image.flaticon.com/icons/svg/1394/1394923.svg"
+                                )
+                              },
+                              size: "TINY",
+                              isThumbnail: false,
+                              style: "STANDARD",
+                              align: "CENTER"
+                            )
+                          }
+                        ),
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_imageField_v1"(
+                              label: "",
+                              labelPosition: "ABOVE",
+                              images: {
+                                #"SYSTEM_SYSRULES_webImage"(
+                                  source: "https://image.flaticon.com/icons/svg/272/272026.svg"
+                                )
+                              },
+                              size: "TINY",
+                              isThumbnail: false,
+                              style: "STANDARD",
+                              align: "CENTER"
+                            )
+                          }
+                        ),
+                        #"SYSTEM_SYSRULES_columnLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_imageField_v1"(
+                              label: "",
+                              labelPosition: "ABOVE",
+                              images: {
+                                #"SYSTEM_SYSRULES_webImage"(
+                                  source: "https://image.flaticon.com/icons/svg/1394/1394924.svg"
+                                )
+                              },
+                              size: "TINY",
+                              isThumbnail: false,
+                              style: "STANDARD",
+                              align: "CENTER"
+                            )
+                          }
+                        )
+                      }
+                    ),
+                    #"SYSTEM_SYSRULES_gridField_v1"(
+                      label: "",
+                      labelPosition: "ABOVE",
+                      data: local!productosNoDisp,
+                      columns: {
+                        #"SYSTEM_SYSRULES_gridColumn"(
+                          label: "Producto",
+                          value: local!product.nombre,
+                          align: "CENTER",
+                          width: "AUTO"
+                        ),
+                        #"SYSTEM_SYSRULES_gridColumn"(
+                          label: "Modelo",
+                          value: fv!row.modelo,
+                          align: "CENTER",
+                          width: "AUTO"
+                        ),
+                        #"SYSTEM_SYSRULES_gridColumn"(
+
+                          label: "Categoría",
+                          value: fv!row.categoria,
+                          align: "CENTER",
+                          width: "AUTO"
+                        ),
+                        #"SYSTEM_SYSRULES_gridColumn"(
+
+                          label: "Precio",
+                          value: "$" &amp; fixed(local!product.precio, 2),
+                          align: "CENTER",
+                          width: "AUTO"
+                        ),
+                        #"SYSTEM_SYSRULES_gridColumn"(
+                          label: "Cantidad",
+                          value: 1,
+                          align: "CENTER",
+                          width: "AUTO"
+                        )
+                      },
+                      validations: {}
+                    )
+                  },
+                  style: "ACCENT",
+                  marginBelow: "STANDARD"
+                )}
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        label: "Creación de pedido",
+        contents: {
+          #"SYSTEM_SYSRULES_boxLayout"(
+            label: "Crear pedido especial",
+            contents: {
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Suplidor",
+                        labelPosition: "ABOVE",
+                        value: "A&amp;B Suplidores",
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_integerField"(
+                        label: "Cantidad",
+                        labelPosition: "ABOVE",
+                        value: ri!ordDetalles.cantidad,
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        validations: {}
+                      )
+                    }
+                  ),
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Modelo",
+                        labelPosition: "ABOVE",
+                        value: local!product.modelo,
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Marca",
+                        labelPosition: "ABOVE",
+                        saveInto: {},
+                        value: local!product.marca,
+                        refreshAfter: "UNFOCUS",
+                        validations: {}
+                      )
+                    }
+                  )
+                }
+              )
+            },
+            style: "ACCENT",
+            marginBelow: "STANDARD"
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {}
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {}
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {}
+                  ),
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {}
+                  ),
+                  #"SYSTEM_SYSRULES_columnLayout"(
+                    contents: {}
+                  )
+                }
+              )
+            }
+          )
+        }
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Enviar",
+          submit: true,
+          style: "PRIMARY",
+          saveInto:{
+            a!save(ri!pedido.idProducto, ri!ordDetalles.idProducto),
+            a!save(ri!pedido.nombre, local!product.nombre),
+            a!save(ri!pedido.cantidad, ri!ordDetalles.cantidad),
+            a!save(ri!pedido.via, "Aerea"),
+            a!save(ri!pedido.fechaEstimada, today() + 7),
+            a!save(ri!pedido.modelo, local!product.modelo),
+            a!save(ri!pedido.categoria, local!product.categoria),
+            a!save(ri!pedido.marca, local!product.marca),
+            a!save(ri!pedido.idOrden, ri!ordDetalles.idOrden),
+            a!save(ri!pedido.reservado, true()),
+            a!save(ri!pedido.estado, "Recibido")
+          }
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Cancelar",
+          value: true,
+          saveInto: ri!cancel,
+          submit: true,
+          style: "NORMAL",
+          validate: false
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>ordDetalles</name>
+            <type>
+                <name>GV_OrdDetalles_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>orden</name>
+            <type>
+                <name>GV_Orden_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>pedido</name>
+            <type>
+                <name>GV_Pedidos</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_373321"/>
+    </history>
+</contentHaul>

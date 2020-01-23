@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_339675</versionUuid>
+    <rule>
+        <name>GV_GridVehiclo</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_336110</uuid>
+        <description>Grid usado para añadir un vehículo de un cliente</description>
+        <parentUuid>_a-0000e305-b931-8000-9ba2-011c48011c48_304485</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  #"SYSTEM_SYSRULES_gridLayout"(
+    label: "Vehículos",
+    labelPosition: "ABOVE",
+    instructions: "Añada datos del vehículo del cliente.",
+    totalcount: if(
+      isnull(ri!vehiculo),
+      0,
+      count(ri!vehiculo)
+    ),
+    headerCells: {
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Marca"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Modelo"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Año"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"()
+    },
+    columnConfigs: {
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(weight: 2),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(weight: 3),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(weight: 2),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"()
+    },
+    rows: #"SYSTEM_SYSRULES_forEach"(
+      items: ri!vehiculo,
+      expression: 
+      #"SYSTEM_SYSRULES_gridRowLayout"(
+        contents: {
+          #"SYSTEM_SYSRULES_textField"(
+            value: fv!item.marca,
+            saveInto: fv!item.marca,
+            required: true
+          ),
+          #"SYSTEM_SYSRULES_textField"(
+            value: fv!item.modelo,
+            saveInto: fv!item.modelo,
+            required: true
+          ),
+          #"SYSTEM_SYSRULES_integerField"(
+            value: fv!item.anio,
+            saveInto: fv!item.anio,
+            required: true
+          ),
+          #"SYSTEM_SYSRULES_imageField_v1"(
+            images: #"SYSTEM_SYSRULES_documentImage"(
+              document: #"SYSTEM_SYSRULES_iconIndicator"(
+                icon: "REMOVE"
+              ),
+              link: #"SYSTEM_SYSRULES_dynamicLink"(
+                label: "Dynamic Link",
+                value: remove(ri!vehiculo, fv!index),
+                saveInto: ri!vehiculo
+              )
+            )
+          )
+        }
+      )
+    ),
+    selectionSaveInto: {},
+    addrowlink: #"SYSTEM_SYSRULES_dynamicLink"(
+      label: "Agregar Vehículo",
+      saveInto: a!save(
+        target: ri!vehiculo,
+        value: append(ri!vehiculo, 'type!{urn:com:appian:types}GV_Vehiculos'())
+      )
+    ),
+    validations: {},
+    shadeAlternateRows: true
+  )
+}</definition>
+        <namedTypedValue>
+            <name>contact</name>
+            <type>
+                <name>CRM_Contact_BT?list</name>
+                <namespace>urn:com:appian:types:CRM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>vehiculo</name>
+            <type>
+                <name>GV_Vehiculos?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_339675"/>
+    </history>
+</contentHaul>

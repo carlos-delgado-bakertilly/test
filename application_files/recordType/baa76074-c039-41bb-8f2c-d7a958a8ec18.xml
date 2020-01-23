@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>d4eaf492-d1b2-4fb4-b598-da72fcf8c550</versionUuid>
+  <recordType a:uuid="baa76074-c039-41bb-8f2c-d7a958a8ec18" name="GV_Piezas">
+    <a:pluralName>GV_Piezases</a:pluralName>
+    <a:description>Record de Piezas</a:description>
+    <a:urlStub>Mdc5rA</a:urlStub>
+    <a:source
+      a:uuid="24fcc670-ce25-441d-809c-59713dd87e88@_a-0000e319-718a-8000-9ba2-011c48011c48_332471" xsi:type="a:DataStoreEntity"/>
+    <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "nombre",
+    ascending: fn!true()
+  ),
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Nombre",
+      field: "nombre",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+          label: rf!nombre,
+          recordType: rp!type,
+          identifier: rp!id
+        )
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Descripcion",
+      field: "descripcion",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayValue: rf!descripcion,
+        align: null
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Marca",
+      field: "marca",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayValue: rf!marca,
+        align: null
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Precio",
+      field: "precio",
+      component: #"SYSTEM_SYSRULES_recordGrid_floatingPointField"(
+        displayValue: rf!precio,
+        align: "RIGHT"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Cantidad",
+      field: "cantidad",
+      component: #"SYSTEM_SYSRULES_recordGrid_integerField"(
+        displayValue: rf!cantidad,
+        align: "RIGHT"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Id",
+      field: "id",
+      component: #"SYSTEM_SYSRULES_recordGrid_integerField"(
+        displayValue: rf!id,
+        align: "RIGHT"
+      )
+    )
+  },
+  shadeAlternateRows: true
+)</a:listViewTemplateExpr>
+    <a:detailViewCfg>
+      <a:nameExpr>="Summary"</a:nameExpr>
+      <a:uiExpr/>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:urlStub>summary</a:urlStub>
+      <a:headerExpr/>
+    </a:detailViewCfg>
+    <a:isSystem>false</a:isSystem>
+    <a:dataSrcExpr/>
+    <a:facetsListExpr/>
+    <a:titleExpr>rf!nombre</a:titleExpr>
+    <a:defaultFiltersExpr/>
+    <a:layoutType>GRID</a:layoutType>
+    <a:security>16383</a:security>
+    <a:hideLatestNews>false</a:hideLatestNews>
+    <a:isExportable>true</a:isExportable>
+    <a:listViewSrcExpr/>
+    <a:recordViewSrcExpr/>
+    <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+    <a:isCachingEnabled>false</a:isCachingEnabled>
+    <a:enabledFeatures>0</a:enabledFeatures>
+    <a:isVisibleInRecordTypeList>true</a:isVisibleInRecordTypeList>
+  </recordType>
+  <roleMap>
+    <role name="record_type_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="d4eaf492-d1b2-4fb4-b598-da72fcf8c550"/>
+  </history>
+  <migrationVersion>1</migrationVersion>
+</recordTypeHaul>

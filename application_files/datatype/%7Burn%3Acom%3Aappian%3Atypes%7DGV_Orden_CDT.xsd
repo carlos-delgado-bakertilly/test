@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types"
+  xmlns:a="http://www.appian.com/ae/types/2009"
+  xmlns:tns="urn:com:appian:types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://www.appian.com/ae/types/2009" schemaLocation="%7Bhttp%3A%2F%2Fwww.appian.com%2Fae%2Ftypes%2F2009%7DCollaborationDocument.xsd"/>
+  <xsd:complexType name="GV_Orden_CDT">
+    <xsd:annotation>
+      <xsd:documentation><![CDATA[CDT para Orden]]></xsd:documentation>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0000e334-7715-8000-f92f-7f0000014e7a</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0000e334-7715-8000-f92f-7f0000014e7a"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="idCliente" nillable="true" type="xsd:int"/>
+      <xsd:element name="estado" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(length=255)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="listoParaBuscar" nillable="true" type="xsd:boolean"/>
+      <xsd:element name="fechaCreacion" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="fechaEstimada" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="total" nillable="true" type="xsd:double"/>
+      <xsd:element name="nombreVendedor" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(length=255)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="idSucursal" nillable="true" type="xsd:int"/>
+      <xsd:element name="codigoQR" nillable="true" type="a:CollaborationDocument"/>
+      <xsd:element name="firmaCliente" nillable="true" type="a:CollaborationDocument"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>ca8124ff-47e0-4ed1-bd81-36656b530eed</versionUuid>
+  <recordType a:uuid="1f9d6a5c-b536-474e-bfc7-a607b59b2151" name="GV_Ordenes">
+    <a:pluralName>GV_Ordeneses</a:pluralName>
+    <a:description/>
+    <a:urlStub>oCTDNw</a:urlStub>
+    <a:source
+      a:uuid="fddd2b89-bb79-40b9-b3d3-1e984cf1ecd4@_a-0000e319-718a-8000-9ba2-011c48011c48_332471" xsi:type="a:DataStoreEntity"/>
+    <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  emptygridmessage: "",
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Id Caso",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: {
+          #"SYSTEM_SYSRULES_recordLink"(
+            label: rf!id,
+            recordType: rp!type,
+            identifier: rp!id
+          )
+        }
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Cédula del Cliente",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: #"_a-0000e319-718a-8000-9ba2-011c48011c48_365465"(rf!idCliente).cedula
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Estado",
+      field: "estado",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!estado
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Monto",
+      field: "monto",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: if(
+          isnull(rf!total),
+          null,
+          "$" &amp; fixed(rf!total, 2)
+        )
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Fecha Estimada de Entrega",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_dateTimeField"(
+        displayvalue: if (
+          isnull(rf!fechaEstimada),
+          "N/A",
+          rf!fechaEstimada
+        )
+      )
+    )
+  },
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "estado",
+    ascending: fn!true()
+  ),
+  shadeAlternateRows: true
+)</a:listViewTemplateExpr>
+    <a:fieldCfg name="estado">
+      <a:description/>
+      <a:sourceRef>estado</a:sourceRef>
+      <a:isSortable>false</a:isSortable>
+      <a:isSearchable>false</a:isSearchable>
+      <a:isFacet>true</a:isFacet>
+      <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+      <a:isExclusiveFacet>true</a:isExclusiveFacet>
+      <a:facetLabelExpr>="Estado"</a:facetLabelExpr>
+      <a:facetOption>
+        <a:labelExpr>"En proceso"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"En proceso"</a:values>
+      </a:facetOption>
+      <a:facetOption>
+        <a:labelExpr>"Pagada"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"Pagada"</a:values>
+      </a:facetOption>
+      <a:facetOption>
+        <a:labelExpr>"Completada"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"Completada"</a:values>
+      </a:facetOption>
+      <a:sortOrderIndex>0</a:sortOrderIndex>
+      <a:facetOrderIndex>0</a:facetOrderIndex>
+      <a:visibilityExpr/>
+      <a:defaultOptionExpr/>
+      <a:allowMultipleSelections>false</a:allowMultipleSelections>
+    </a:fieldCfg>
+    <a:detailViewCfg>
+      <a:nameExpr>="Summary"</a:nameExpr>
+      <a:uiExpr>#"_a-0000e319-718a-8000-9ba2-011c48011c48_368441"(
+  orden: #"_a-0000e319-718a-8000-9ba2-011c48011c48_351583"(rf!id)
+)</a:uiExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:urlStub>summary</a:urlStub>
+      <a:headerExpr/>
+      <a:relatedActionCfg>298b5abf-01bb-476d-84ed-6593b12ad5a0</a:relatedActionCfg>
+    </a:detailViewCfg>
+    <a:relatedActionCfg>
+      <a:target a:uuid="0002e32d-e3d6-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+      <a:contextExpr>{
+  cancel: null, /* Boolean */
+  numOrden: rf!id, /* Number (Integer) */
+  ordDetalles: #"_a-0000e319-718a-8000-9ba2-011c48011c48_350885"(rf!id), /* GV_OrdDetalles_CDT?list */
+  orden: #"_a-0000e319-718a-8000-9ba2-011c48011c48_351583"(rf!id) /* GV_Orden_CDT */
+}</a:contextExpr>
+      <a:visibilityExpr>a!localVariables(
+  local!orderDetails: #"_a-0000e319-718a-8000-9ba2-011c48011c48_350885"(rf!id),
+  local!orderDetailsBool: #"SYSTEM_SYSRULES_forEach"(local!orderDetails, isnull(fv!item.idPieza)),
+  if(contains(toboolean(local!orderDetailsBool), true()), false(), true())
+)</a:visibilityExpr>
+      <a:iconId>f0e7</a:iconId>
+      <a:refId>298b5abf-01bb-476d-84ed-6593b12ad5a0</a:refId>
+      <a:staticTitleString>Generación de Picking</a:staticTitleString>
+      <a:staticDescriptionString/>
+    </a:relatedActionCfg>
+    <a:isSystem>false</a:isSystem>
+    <a:dataSrcExpr/>
+    <a:facetsListExpr/>
+    <a:titleExpr>rf!id</a:titleExpr>
+    <a:defaultFiltersExpr/>
+    <a:layoutType>GRID</a:layoutType>
+    <a:security>16383</a:security>
+    <a:hideLatestNews>false</a:hideLatestNews>
+    <a:isExportable>true</a:isExportable>
+    <a:listViewSrcExpr/>
+    <a:recordViewSrcExpr/>
+    <a:recordListActionCfg>
+      <a:staticTitle>Crear caso</a:staticTitle>
+      <a:staticDescription>Inicia la creación de un nuevo caso</a:staticDescription>
+      <a:iconId>f067</a:iconId>
+      <a:target a:uuid="0002e324-eafa-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+    </a:recordListActionCfg>
+    <a:iconId/>
+    <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+    <a:isCachingEnabled>false</a:isCachingEnabled>
+    <a:enabledFeatures>0</a:enabledFeatures>
+    <a:isVisibleInRecordTypeList>true</a:isVisibleInRecordTypeList>
+  </recordType>
+  <roleMap>
+    <role name="record_type_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="ca8124ff-47e0-4ed1-bd81-36656b530eed"/>
+  </history>
+  <migrationVersion>1</migrationVersion>
+</recordTypeHaul>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_369125</versionUuid>
+    <rule>
+        <name>GV_VerificaciónDePiezas</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_368895</uuid>
+        <description>Interfaz de para verificación de piezas</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!ordDetalles:#"_a-0000e319-718a-8000-9ba2-011c48011c48_350885"(ri!numOrden),
+  local!data: {#"SYSTEM_SYSRULES_forEach"(ri!ordDetalles, "")},
+  local!validations: {},
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "Verificación de piezas a entregar",
+    contents: {
+      #"SYSTEM_SYSRULES_integerField"(
+        label: "Número de orden: ",
+        labelPosition: "ADJACENT",
+        value: ri!numOrden,
+        saveInto: {},
+        refreshAfter: "UNFOCUS",
+        readonly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        contents: {
+          #"SYSTEM_SYSRULES_gridLayout"(
+            label: "",
+            labelPosition: "ABOVE",
+            headerCells: {
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Nombre"),
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Marca"),
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Número de Código de Barra"),
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Código"),
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Ubicación"),
+              #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Estado")
+            },
+            columnConfigs: {},
+            rows: {
+              #"SYSTEM_SYSRULES_forEach" (
+                local!ordDetalles,
+                #"SYSTEM_SYSRULES_gridRowLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_textField"(
+                      value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!item.idProducto).nombre,
+                      readOnly: true()
+                    ),
+                    #"SYSTEM_SYSRULES_textField"(
+                      value: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!item.idProducto).marca,
+                      readOnly: true
+                    ),
+                    #"SYSTEM_SYSRULES_textField"(
+                      value: if(
+                        isnull(fv!item.idPieza),
+                        #"_a-0000e319-718a-8000-9ba2-011c48011c48_358103"(fv!item.idProducto).codigoBarraNum,
+                        #"_a-0000e319-718a-8000-9ba2-011c48011c48_339916"(fv!item.idPieza).codigoBarraNum
+                      ),
+                      readOnly: true
+                    ),
+                    #"SYSTEM_SYSRULES_barcodeField"(
+                      value: index(local!data, fv!index),
+                      saveInto: {
+                        a!save(local!data[fv!index], save!value),
+                        a!save(local!validations, append(local!validations, fv!item))
+                      },
+                      validations: if(
+                        isnull(fv!item.idPieza),
+                        if(
+                          local!data[fv!index] = #"_a-0000e319-718a-8000-9ba2-011c48011c48_358103"(fv!item.idProducto).codigoBarraNum,
+                          null,
+                          "El codigo de barras leído no coincide con la pieza en la orden."
+                        ),
+                        if(
+                          local!data[fv!index] = #"_a-0000e319-718a-8000-9ba2-011c48011c48_339916"(fv!item.idPieza).codigoBarraNum,
+                          null,
+                          "El codigo de barras leído no coincide con la pieza en la orden."
+                        )
+                      )
+                    ),
+                    /*a!textField(*/
+                      /*value: index(local!data, fv!index),*/
+                      /*saveInto: local!data[fv!index]*/
+                    /*),*/
+                    #"SYSTEM_SYSRULES_textField"(
+                      value: a!localVariables(
+                        local!data: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(fv!item.idProducto),
+                        "Tramo: " &amp; local!data.tramo &amp; " Estante: " &amp; local!data.estante
+                      ),
+                      readOnly: true
+                     
+                    ),
+                    #"SYSTEM_SYSRULES_textField"(
+                      label: "Estado",
+                      readOnly: true,
+                      value: if(
+                        isnull(fv!item.idPieza),
+                        null,
+                        if(
+                          local!data[fv!index] = #"_a-0000e319-718a-8000-9ba2-011c48011c48_339916"(fv!item.idPieza).codigoBarraNum,
+                          "Despacho",
+                          null
+                        )
+                      )
+                    )
+                  }
+                )
+              )
+            },
+            selectionSaveInto: {},
+            validations: {},
+            shadeAlternateRows: true
+          )
+        }
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Enviar",
+          submit: true,
+          style: "PRIMARY"
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Cancelar",
+          value: true,
+          saveInto: ri!cancel,
+          submit: true,
+          style: "NORMAL",
+          validate: false
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>ordDetalles</name>
+            <type>
+                <name>GV_OrdDetalles_CDT?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>numOrden</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>codigos</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>cancel</a:nameRef>
+                    <a:id>1</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">#"_a-0000e319-718a-8000-9ba2-011c48011c48_353183"()</a:value>
+                    <a:nameRef>ordDetalles</a:nameRef>
+                    <a:id>2</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:int"/>
+                    <a:nameRef>numOrden</a:nameRef>
+                    <a:id>3</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:nameRef>codigos</a:nameRef>
+                    <a:id>4</a:id>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_369125"/>
+    </history>
+</contentHaul>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_342174</versionUuid>
+    <rule>
+        <name>orderFromBarcode</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_341633</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  #"SYSTEM_SYSRULES_gridField_v1"(
+    label: "Read-only Grid",
+    labelPosition: "ABOVE",
+    data: ri!producto,
+    columns: {
+      #"SYSTEM_SYSRULES_gridColumn"(
+        label: "Nombre",
+        value: fv!row.nombre
+      ),
+      #"SYSTEM_SYSRULES_gridColumn"(
+        label: "Cantidad",
+        value: fv!row.cantidad
+      )
+    },
+    validations: {}
+  ),
+  #"SYSTEM_SYSRULES_gridField_v1"(
+    label: "Read-only Grid",
+    labelPosition: "ABOVE",
+    data: ri!detalle,
+    columns: {
+      #"SYSTEM_SYSRULES_gridColumn"(
+        label: "Precio Unidad",
+        value: fv!row.precio_unidad
+      ),
+      #"SYSTEM_SYSRULES_gridColumn"(
+        label: "Estado",
+        value: fv!row.estado
+      )
+    },
+    validations: {}
+  )
+}</definition>
+        <namedTypedValue>
+            <name>producto</name>
+            <type>
+                <name>GV_Producto_CDT?list</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>detalle</name>
+            <type>
+                <name>GV_OrdDetalles_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_342174"/>
+    </history>
+</contentHaul>

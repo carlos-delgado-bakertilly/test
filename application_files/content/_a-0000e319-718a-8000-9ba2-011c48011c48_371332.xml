@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621438</versionUuid>
+    <rule>
+        <name>GV_GridOrden</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_371332</uuid>
+        <description></description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_gridField_v1"(
+  label: "",
+  labelPosition: "ABOVE",
+  data: #"SYSTEM_SYSRULES_queryEntity_v1"(
+    entity: #"_a-0000e319-718a-8000-9ba2-011c48011c48_351589",
+    query: #"SYSTEM_SYSRULES_query"(
+      selection: #"SYSTEM_SYSRULES_querySelection"(
+        columns: {
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "id"
+          ),
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "idCliente"
+          ),
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "estado"
+          ),
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "nombreVendedor"
+          ),
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "idSucursal"
+          ),          
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "total"
+          )
+        }
+      ),
+      pagingInfo: fv!pagingInfo
+    ),
+    fetchTotalCount: true
+  ),
+  columns: {
+
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "",
+      sortField: "logo",
+      value: #"SYSTEM_SYSRULES_imageField_v1"(
+        images: {
+          #"SYSTEM_SYSRULES_documentImage"(
+            document: #"_a-0000e319-718a-8000-9ba2-011c48011c48_371373"
+          )
+        },
+        size: "GALLERY",
+        align: "CENTER"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Order Number",
+      sortField: "id",
+      value: #"SYSTEM_SYSRULES_linkField"(
+        links: {
+          #"SYSTEM_SYSRULES_recordLink"(
+            label: fv!row.id,
+            recordType: #"_a-0000e319-718a-8000-9ba2-011c48011c48_371698",
+            identifier: fv!row.id,
+            dashboard: "summary"
+          )
+        }
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Client",
+      sortField: "idCliente",
+      value: index(#"_a-0000e319-718a-8000-9ba2-011c48011c48_354048"(fv!row.idCliente), "cedula", null)  &amp; " - " &amp; index(#"_a-0000e319-718a-8000-9ba2-011c48011c48_354048"(fv!row.idCliente), "nombre", null)
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Total",
+      sortField: "total",
+      value: if(isnull(fv!row.total), dollar(0), dollar(fv!row.total))
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Status",
+      sortField: "estado",
+      value: fv!row.estado
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Seller",
+      sortField: "nombreVendedor",
+      value: fv!row.nombreVendedor
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Store",
+      sortField: "idSucursal",
+      value: index(#"_a-0000e319-718a-8000-9ba2-011c48011c48_371567"(fv!row.idSucursal), "nombre", null) 
+    )
+  },
+  pagesize: 10,
+  initialsorts: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "id",
+    ascending: true
+  ),
+  validations: {},
+  borderstyle: "STANDARD"
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e39b-e6a8-8000-9ba2-011c48011c48_621438"/>
+    </history>
+</contentHaul>

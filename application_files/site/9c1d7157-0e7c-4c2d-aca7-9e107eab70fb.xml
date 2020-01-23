@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>b55923a3-892c-4159-8f8b-32fe6d321f9b</versionUuid>
+  <site a:uuid="9c1d7157-0e7c-4c2d-aca7-9e107eab70fb" name="GV Main Site">
+    <description/>
+    <urlStub>gv-mainsite</urlStub>
+    <page>
+      <staticName>Home</staticName>
+      <description/>
+      <urlStub>home</urlStub>
+      <uiObject a:uuid="28152498-f6b6-433a-859d-eaf7e129ade2" xsi:type="a:TempoReport"/>
+      <iconId>f015</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+    </page>
+    <page>
+      <staticName>Pedidos</staticName>
+      <description/>
+      <urlStub>pedidos</urlStub>
+      <uiObject a:uuid="bcf0b8a1-ecb2-410f-9137-d4f9928d7f23" xsi:type="a:RecordType">
+        <a:isSystem>false</a:isSystem>
+        <a:security>16383</a:security>
+        <a:hideLatestNews>false</a:hideLatestNews>
+        <a:isExportable>true</a:isExportable>
+        <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+        <a:isCachingEnabled>false</a:isCachingEnabled>
+        <a:enabledFeatures>0</a:enabledFeatures>
+        <a:isVisibleInRecordTypeList>true</a:isVisibleInRecordTypeList>
+      </uiObject>
+      <iconId>f072</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+    </page>
+    <page>
+      <staticName>Tasks</staticName>
+      <description/>
+      <urlStub>taks</urlStub>
+      <uiObject a:uuid="6feb370b-6b37-4f6e-8006-6e9b70c951fd" xsi:type="a:TempoReport"/>
+      <iconId>f02d</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+    </page>
+    <visibility>268435456</visibility>
+    <headerBackgroundColor>#000000</headerBackgroundColor>
+    <selectedTabBackgroundColor>#88AB13</selectedTabBackgroundColor>
+    <faviconRef a:uuid="_a-0000e390-1c28-8000-9ba2-011c48011c48_567419" xsi:type="a:CollaborationDocument"/>
+    <faviconHref/>
+    <logoRef a:uuid="_a-0000e2d7-5ba6-8000-9ba2-011c48011c48_247508" xsi:type="a:CollaborationDocument"/>
+    <logoHref/>
+    <headerBackgroundColorExpr/>
+    <selectedTabBackgroundColorExpr/>
+    <accentColor>#000000</accentColor>
+    <accentColorExpr/>
+    <logoExpr/>
+    <faviconExpr/>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>true</showRecordNews>
+    <tasksInSitesVisibility>HIDDEN</tasksInSitesVisibility>
+    <isSystem>false</isSystem>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="b55923a3-892c-4159-8f8b-32fe6d321f9b"/>
+  </history>
+</siteHaul>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>de69b550-cd4a-4467-9a95-9726b1e808e8</versionUuid>
+  <recordType a:uuid="bcf0b8a1-ecb2-410f-9137-d4f9928d7f23" name="GV_RecordPedidos">
+    <a:pluralName>GV_RecordPedidoses</a:pluralName>
+    <a:description>Record de Pedidos</a:description>
+    <a:urlStub>3H6pHA</a:urlStub>
+    <a:source
+      a:uuid="3176c825-3ffa-4c29-9a9a-589eae0a9b6c@_a-0000e319-718a-8000-9ba2-011c48011c48_332471" xsi:type="a:DataStoreEntity"/>
+    <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          document: 
+            #"_a-0000e319-718a-8000-9ba2-011c48011c48_373413"
+          
+        ),
+        size: "GALLERY",
+        isThumbnail: false,
+        style: "STANDARD"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Nombre",
+      field: "nombre",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!nombre
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Via",
+      field: "via",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayValue: rf!via,
+        align: null
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Cantidad",
+      field: "cantidad",
+      align: "LEFT",
+      component: #"SYSTEM_SYSRULES_recordGrid_integerField"(
+        displayValue: rf!cantidad,
+        align: "LEFT"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Marca",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!marca
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Modelo",
+      field: "modelo",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayValue: rf!modelo,
+        align: null
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Estado",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!estado
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Fecha Estimada",
+      width: "DISTRIBUTE",
+      field: "fechaEstimada",
+      component: #"SYSTEM_SYSRULES_recordGrid_dateField"(
+        displayvalue: rf!fechaEstimada
+      )
+    )
+  },
+  pageSize: 5,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "nombre",
+    ascending: fn!true()
+  ),
+  shadeAlternateRows: true
+)</a:listViewTemplateExpr>
+    <a:fieldCfg name="Vía">
+      <a:description/>
+      <a:sourceRef>via</a:sourceRef>
+      <a:isSortable>false</a:isSortable>
+      <a:isSearchable>false</a:isSearchable>
+      <a:isFacet>true</a:isFacet>
+      <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+      <a:isExclusiveFacet>true</a:isExclusiveFacet>
+      <a:facetLabelExpr>="Por Vía"</a:facetLabelExpr>
+      <a:facetOption>
+        <a:labelExpr>"Aérea"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"Aerea"</a:values>
+      </a:facetOption>
+      <a:facetOption>
+        <a:labelExpr>"Marítima"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"Maritima"</a:values>
+      </a:facetOption>
+      <a:sortOrderIndex>0</a:sortOrderIndex>
+      <a:facetOrderIndex>0</a:facetOrderIndex>
+      <a:visibilityExpr/>
+      <a:defaultOptionExpr/>
+      <a:allowMultipleSelections>false</a:allowMultipleSelections>
+    </a:fieldCfg>
+    <a:fieldCfg name="Estado">
+      <a:description/>
+      <a:sourceRef>estado</a:sourceRef>
+      <a:isSortable>false</a:isSortable>
+      <a:isSearchable>false</a:isSearchable>
+      <a:isFacet>true</a:isFacet>
+      <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+      <a:isExclusiveFacet>true</a:isExclusiveFacet>
+      <a:facetLabelExpr>="Por Estado"</a:facetLabelExpr>
+      <a:facetOption>
+        <a:labelExpr>"En Proceso"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"En Proceso"</a:values>
+      </a:facetOption>
+      <a:facetOption>
+        <a:labelExpr>"Recibido"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>"Recibido"</a:values>
+      </a:facetOption>
+      <a:sortOrderIndex>1</a:sortOrderIndex>
+      <a:facetOrderIndex>1</a:facetOrderIndex>
+      <a:visibilityExpr/>
+      <a:defaultOptionExpr/>
+      <a:allowMultipleSelections>false</a:allowMultipleSelections>
+    </a:fieldCfg>
+    <a:fieldCfg name="Reserva">
+      <a:description/>
+      <a:sourceRef>reservado</a:sourceRef>
+      <a:isSortable>false</a:isSortable>
+      <a:isSearchable>false</a:isSearchable>
+      <a:isFacet>true</a:isFacet>
+      <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+      <a:isExclusiveFacet>true</a:isExclusiveFacet>
+      <a:facetLabelExpr>="Por Reserva"</a:facetLabelExpr>
+      <a:facetOption>
+        <a:labelExpr>"Reservado"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>true</a:values>
+      </a:facetOption>
+      <a:facetOption>
+        <a:labelExpr>"No Reservado"</a:labelExpr>
+        <a:facetOperator>IN</a:facetOperator>
+        <a:lowerLimitExpr/>
+        <a:upperLimitExpr/>
+        <a:values>false</a:values>
+      </a:facetOption>
+      <a:sortOrderIndex>2</a:sortOrderIndex>
+      <a:facetOrderIndex>2</a:facetOrderIndex>
+      <a:visibilityExpr/>
+      <a:defaultOptionExpr/>
+      <a:allowMultipleSelections>false</a:allowMultipleSelections>
+    </a:fieldCfg>
+    <a:detailViewCfg>
+      <a:nameExpr>="Summary"</a:nameExpr>
+      <a:uiExpr/>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:urlStub>summary</a:urlStub>
+      <a:headerExpr/>
+    </a:detailViewCfg>
+    <a:isSystem>false</a:isSystem>
+    <a:dataSrcExpr/>
+    <a:facetsListExpr/>
+    <a:titleExpr/>
+    <a:defaultFiltersExpr/>
+    <a:layoutType>GRID</a:layoutType>
+    <a:security>16383</a:security>
+    <a:hideLatestNews>false</a:hideLatestNews>
+    <a:isExportable>true</a:isExportable>
+    <a:listViewSrcExpr/>
+    <a:recordViewSrcExpr/>
+    <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+    <a:isCachingEnabled>false</a:isCachingEnabled>
+    <a:enabledFeatures>0</a:enabledFeatures>
+    <a:isVisibleInRecordTypeList>true</a:isVisibleInRecordTypeList>
+  </recordType>
+  <roleMap>
+    <role name="record_type_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="de69b550-cd4a-4467-9a95-9726b1e808e8"/>
+  </history>
+  <migrationVersion>1</migrationVersion>
+</recordTypeHaul>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>2b7f3e43-8ec4-433a-8b51-43603543ab78</versionUuid>
+  <site a:uuid="89a40af9-2775-42de-a0d5-188db437e888" name="GV Pasarela de Pagos">
+    <description>Pasarela de pagos grupo Viamar</description>
+    <urlStub>gv-sitiopago</urlStub>
+    <page>
+      <staticName>Pago En Línea</staticName>
+      <description/>
+      <urlStub>virtual</urlStub>
+      <uiObject a:uuid="0002e323-5608-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+      <iconId>f09d</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+    </page>
+    <visibility>268435456</visibility>
+    <headerBackgroundColor>#000000</headerBackgroundColor>
+    <selectedTabBackgroundColor>#88AB13</selectedTabBackgroundColor>
+    <faviconRef a:uuid="_a-0000e390-1c28-8000-9ba2-011c48011c48_567419" xsi:type="a:CollaborationDocument"/>
+    <faviconHref/>
+    <logoRef a:uuid="_a-0000e2d7-5ba6-8000-9ba2-011c48011c48_247508" xsi:type="a:CollaborationDocument"/>
+    <logoHref/>
+    <headerBackgroundColorExpr/>
+    <selectedTabBackgroundColorExpr/>
+    <accentColor>#000000</accentColor>
+    <accentColorExpr/>
+    <logoExpr/>
+    <faviconExpr/>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>true</showRecordNews>
+    <tasksInSitesVisibility>HIDDEN</tasksInSitesVisibility>
+    <isSystem>false</isSystem>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e337-c405-8000-9aee-01075c01075c_854</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="2b7f3e43-8ec4-433a-8b51-43603543ab78"/>
+  </history>
+</siteHaul>

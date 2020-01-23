@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_353873</versionUuid>
+    <rule>
+        <name>GV_RespuestaPedidoEspecialAereo</name>
+        <uuid>_a-0000e319-718a-8000-9ba2-011c48011c48_352946</uuid>
+        <description>Interfaz de respuesta de suplidor</description>
+        <parentUuid>_a-0000e319-718a-8000-9ba2-011c48011c48_331440</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!product: #"_a-0000e319-718a-8000-9ba2-011c48011c48_335527"(ri!ordDetalles.idProducto),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "Respuesta del Suplidor",
+    contents: {
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_boxLayout"(
+                    label: "Detalles",
+                    contents: {                         
+                      #"SYSTEM_SYSRULES_dateField"(
+                        label: "Fecha de Hoy",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        value: today(),
+                        readOnly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Estado de la orden",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        value: "Confirmado",
+                        refreshAfter: "UNFOCUS",
+                        readOnly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_dateField"(
+                        label: "Fecha de entrega",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        value: today() + 10,
+                        readOnly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Monto total",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        value: "RD$" &amp; fixed(ri!ordDetalles.precioTotal, 2),
+                        refreshAfter: "UNFOCUS",
+                        readOnly: true,
+                        validations: {}
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Nombre de la pieza",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        readOnly: true,
+                        validations: {},
+                        value: local!product.nombre
+                      ),
+                      #"SYSTEM_SYSRULES_textField"(
+                        label: "Modelo de la pieza",
+                        labelPosition: "ADJACENT",
+                        saveInto: {},
+                        refreshAfter: "UNFOCUS",
+                        readOnly: true,
+                        validations: {},
+                        value: local!product.modelo
+                      )
+                    },
+                    style: "ACCENT",
+                    marginBelow: "STANDARD"
+                  )
+                }
+              ),
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {}
+              )
+            }
+          )
+        }
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Aceptar",
+          submit: true,
+          style: "PRIMARY"
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>ordDetalles</name>
+            <type>
+                <name>GV_OrdDetalles_CDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e319-718a-8000-9ba2-011c48011c48_353873"/>
+    </history>
+</contentHaul>
